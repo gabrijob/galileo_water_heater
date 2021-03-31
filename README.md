@@ -1,7 +1,11 @@
+Autores: 
+	00244073 - Gabriel J.A Grabher <gabriel.grabher@inf.ufrgs.br>
+
+
 Controlador de aquecedor de agua com uma placa Galileo.
 
--compile;
+-Para compilar basta rodar no diretório raiz do projeto:
  $ make
 
--install library at ${HOME}:
+-Para instalar a biblioteca base (instalado por default na ${HOME}):
  $ make install
