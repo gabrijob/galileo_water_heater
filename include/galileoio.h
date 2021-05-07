@@ -1,7 +1,7 @@
 /*
-  sensors.h: Interface for sensors on a Galileo Board
+  galileoio.h: Helper functions for Galileo I/O
   
-  Copyright (c) 2021 Gabriel J. A. Grabher <gabriel.grabher@inf.ufrgs.br>
+  Copyright (c) 2016, 2020 Walter Fetter Lages <w.fetter@ieee.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,16 +22,24 @@
 
 */
 
-#ifndef WATERLVL_H
-#define WATERLVL_H
+#ifndef GALILEO2IO_H
+#define GALILEO2IO_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-extern int water_level(void);
-extern double temperature(void);
+enum BOARD_NAME
+{
+	BOARD_GALILEO_GEN1=1,
+	BOARD_GALILEO_GEN2=2,
+	BOARD_UNKNOWN=-1
+};
+
+extern int board_name(void);
+extern char * pgets(char *s,int size,const char path[]);
+extern int pputs(const char path[],const char s[]);
 
 #ifdef __cplusplus
 };

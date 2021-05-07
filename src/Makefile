@@ -7,9 +7,9 @@ FLAGS=-Wall -g -MMD
 # Using software trigger
 #FLAGS=-Wall -g -MMD -DTRIG_SYSFS
 
-INCLUDE=-I. -I$(HOME)/include
-LIBDIR=-L$(HOME)/lib
-LIBS=-lproj -lgalileo
+INCLUDE=-I../include -I../include
+LIBDIR=-L../lib
+LIBS=-lproj
 
 CC=$(CROSS_COMPILE)gcc
 CFLAGS=$(FLAGS) $(INCLUDE)

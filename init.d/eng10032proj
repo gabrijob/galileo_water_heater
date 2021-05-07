@@ -40,8 +40,11 @@ case "$1" in
 	if [ ! -d /sys/class/gpio/gpio32 ] ; then
 	    echo -n "32" > /sys/class/gpio/export
 	fi
-	echo -n "out" > /sys/class/gpio/gpio32/direction
-	echo -n "strong" > /sys/class/gpio/gpio32/drive
+#	echo -n "out" > /sys/class/gpio/gpio32/direction
+#	echo -n "strong" > /sys/class/gpio/gpio32/drive
+	echo -n "in" > /sys/class/gpio/gpio32/direction
+	echo -n "hiz" > /sys/class/gpio/gpio32/drive
+	
 	chgrp gpio /sys/class/gpio/gpio32/value
 	chmod g+rw /sys/class/gpio/gpio32/value
 

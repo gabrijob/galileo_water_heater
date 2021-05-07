@@ -1,7 +1,7 @@
 /*
-  sensors.h: Interface for sensors on a Galileo Board
+  pputs.c: Writes a string to a file, given its path.
   
-  Copyright (c) 2021 Gabriel J. A. Grabher <gabriel.grabher@inf.ufrgs.br>
+  Copyright (c) 2016 Walter Fetter Lages <w.fetter@ieee.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,19 +22,19 @@
 
 */
 
-#ifndef WATERLVL_H
-#define WATERLVL_H
+#include <fcntl.h>
+#include <string.h>
+#include <unistd.h>
 
-#ifdef __cplusplus
-extern "C"
+#include <galileoio.h>
+
+int pputs(const char path[],const char s[])
 {
-#endif
-
-extern int water_level(void);
-extern double temperature(void);
-
-#ifdef __cplusplus
-};
-#endif
-
-#endif
+	int fd;;
+	int n;
+	
+	if((fd=open(path,O_WRONLY)) == -1) return -1;
+	n=write(fd,s,strlen(s));
+	close(fd);
+	return n;
+}

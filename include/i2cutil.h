@@ -1,7 +1,7 @@
 /*
-  sensors.h: Interface for sensors on a Galileo Board
+  i2cutil.h: I2C utility functions
   
-  Copyright (c) 2021 Gabriel J. A. Grabher <gabriel.grabher@inf.ufrgs.br>
+  Copyright (c) 2016 Walter Fetter Lages <w.fetter@ieee.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,16 +22,16 @@
 
 */
 
-#ifndef WATERLVL_H
-#define WATERLVL_H
+#ifndef I2CUTIL_H
+#define I2CUTIL_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-extern int water_level(void);
-extern double temperature(void);
+extern int i2c_write_reg(int fd,unsigned char reg,unsigned char data);
+extern int i2c_read_reg(int fd,unsigned char reg,unsigned char *data);
 
 #ifdef __cplusplus
 };

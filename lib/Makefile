@@ -1,12 +1,12 @@
 TARGET=libproj.a
-SRCS=water_level.c temperature.c pwm_control.c
-HEADERS=sensors.h pwm_control.h 
+SRCS=water_level.c temperature.c pwm_control.c pputs.c pgets.c i2c_write_reg.c i2c_read_reg.c board_name.c
+HEADERS=sensors.h pwm_control.h galileoio.h i2cutil.h jhdlcd.h
 
 PREFIX?=$(HOME)
 
 FLAGS=-O2 -Wall -MMD
-INCLUDE=-I. -I../include -I$(HOME)/include
-LIBDIR=-L$(HOME)/lib
+INCLUDE=-I. -I../include
+LIBDIR=-L../lib
 LIBS=-lgalileo
 
 CC=$(CROSS_COMPILE)gcc
@@ -16,6 +16,7 @@ LDFLAGS=$(LIBDIR) $(LIBS)
 CCARFLAGS=-crvs
 
 all: $(TARGET)
+
 
 $(TARGET): $(SRCS:.c=.o)
 	$(CCAR) $(CCARFLAGS) $@ $^ 
@@ -40,3 +41,6 @@ install:
 uninstall:
 	rm -rf $(PREFIX)/lib$(BITS)/$(TARGET)
 	(cd $(PREFIX)/include ; rm -rf $(HEADERS))
+
+
+

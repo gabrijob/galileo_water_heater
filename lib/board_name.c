@@ -1,7 +1,7 @@
 /*
-  water_level.c: Interface to scan a water level sensor for a Galileo Board
+  board_name.c: Returns board name identification.
   
-  Copyright (c) 2021 Gabriel J. A. Grabher <gabriel.grabher@inf.ufrgs.br>
+  Copyright (c) 2020 Walter Fetter Lages <w.fetter@ieee.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,24 +22,16 @@
 
 */
 
-#include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
 #include <unistd.h>
 
 #include <galileoio.h>
-#include <sensors.h>
 
-
-/*
- * Returns if the minimum water level is available. 
- */
-int water_level(void) {
-	//int led_fd;
-	int water_level_sensor_1_fd;
-	char w_lvl;
+int board_name(void)
+{
 	int fd;
-        char s[20];
+	char s[20];
 	int n;
 	
 	fd=open("/sys/devices/virtual/dmi/id/board_name",O_RDONLY);
@@ -48,27 +40,8 @@ int water_level(void) {
 	s[n-1]='\0'; /* Discards new line */
 
 	if(strncmp(s,"Galileo",sizeof s) == 0)
-	{
-		//led_fd=open("/sys/class/gpio/gpio18/value",O_WRONLY);
-		water_level_sensor_1_fd=open("/sys/class/gpio/gpio32/value",O_RDONLY);
-	}
+		return BOARD_GALILEO_GEN1;
 	else if(strncmp(s,"GalileoGen2",sizeof s) == 0)
-	{
-		printf("\nGalileoGen2 board not supported.");
-		return -1;
-	}
-        else return -1;
-
-	
-	lseek(water_level_sensor_1_fd,0,SEEK_SET);
-	read(water_level_sensor_1_fd,&w_lvl,sizeof w_lvl);
-	
-	//lseek(led_fd,0,SEEK_SET);
-	//write(led_fd,&w_lvl,sizeof w_lvl);
-	
-	//close(led_fd);
-	close(water_level_sensor_1_fd);
-
-	w_lvl = !(w_lvl-'0');  
-	return (int)w_lvl;
+		return BOARD_GALILEO_GEN2;
+        else return BOARD_UNKNOWN;
 }
