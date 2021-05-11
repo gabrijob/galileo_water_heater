@@ -9,7 +9,7 @@ FLAGS=-Wall -g -MMD
 
 INCLUDE=-I../include -I../include
 LIBDIR=-L../lib
-LIBS=-lproj
+LIBS=-lproj -lm
 
 CC=$(CROSS_COMPILE)gcc
 CFLAGS=$(FLAGS) $(INCLUDE)
