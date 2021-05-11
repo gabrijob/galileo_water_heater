@@ -33,10 +33,10 @@
 #include <pwm_control.h>
 
 #define PWM_PERIOD_STR "1000000"
-#define PWM_PERIOD 1000000
-#define VCC 3.3
+#define PWM_PERIOD 1000000 //!< Define the period of PWM to 1MHz.
+#define VCC 3.3 //!< Define VCC value.
 
-/*
+/**
  * Initializer to pwm funcions (pwm3 for this project).
  * @return Duty cycle file handler if successful, -1 otherwise.
  */
@@ -56,7 +56,7 @@ int pwm_init() {
 	return fd_dc;
 }
 
-/*
+/**
  * Sets the new average tension for pwm3.
  * @arg Duty cycle file handler
  * @arg Desired average tension 
@@ -72,7 +72,7 @@ void pwm_tension(int fd_dc, int avg_tension) {
         write(fd_dc,str,strlen(str));
 }
 
-/*
+/**
  * Closes duty cycle file and disables pwm3.
  */
 void pwm_end(int fd_dc) {

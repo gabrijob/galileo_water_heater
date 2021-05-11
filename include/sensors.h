@@ -30,7 +30,7 @@ extern "C"
 {
 #endif
 
-#define VCC 3.3
+#define VCC 3.3 //!< Define the VCC value.
 
 extern int water_level(void);
 extern double temperature(void);

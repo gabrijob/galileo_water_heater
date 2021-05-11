@@ -31,7 +31,7 @@
 #include <sensors.h>
 
 
-/*
+/**
  * Returns if the minimum water level is available. 
  */
 int water_level(void) {

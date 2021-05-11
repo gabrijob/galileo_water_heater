@@ -38,7 +38,7 @@
 #define R_THERM_DEFAULT 10000
 #define T1 298.15
 
-/* Calculates the NTCs resistance through a voltage divider */
+/** Calculates the NTCs resistance through a voltage divider */
 double R_thermistor(double v_in) {
 	return R2*(VCC - v_in) / v_in;
 }

@@ -3,11 +3,11 @@
 #include <pwm_control.h>
 #include <galileoio.h>
 
-#define OUTPUT_FILE "temp.out"
+#define OUTPUT_FILE "temp.out" //!< Define the output file to store the temperature values.
 
-#define KC 0.02
-#define KI 0
-#define KD 0
+#define KC 0.02 //!< Define the PID Error constant value.
+#define KI 0 //!< Define the PID integral constant value.
+#define KD 0 //!< Define the PID derivate constant value.
 
 #define MAX_TEMP_OBS 1000
 double temperatures[MAX_TEMP_OBS];
