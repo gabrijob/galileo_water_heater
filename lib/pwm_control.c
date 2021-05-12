@@ -64,7 +64,7 @@ int pwm_init() {
 void pwm_tension(int fd_dc, double avg_tension) {
         int new_dc;
 	char str[80];
-
+	//TODO: testar no periode e não tensão
 	if (avg_tension > VCC) new_dc = PWM_PERIOD;
 	else if (avg_tension < 0) new_dc = 0;
 	else new_dc = avg_tension/VCC * PWM_PERIOD;

@@ -33,9 +33,9 @@
 #include <galileoio.h>
 #include <sensors.h>
 
-#define R2 10000		//!< Voltate divider resistance
-#define B 3460			//!< Thermistor gain
-#define R_THERM_DEFAULT 10000	//!< Thermistor resistance at base temperature
+#define R2 10000.0		//!< Voltate divider resistance
+#define B 3460.0			//!< Thermistor gain
+#define R_THERM_DEFAULT 10000.0	//!< Thermistor resistance at base temperature
 #define T1 298.15		//!< Themistor base temperature  
 
 

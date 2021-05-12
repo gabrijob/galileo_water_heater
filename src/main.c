@@ -49,12 +49,13 @@ double pid_controller(double goal_temp) {
 
 	// Calculate integral temperature
 	integral = 0;
+	//TODO: usar integral anterior
 	for(i=0; i<last_temp_index; i++){
 		integral += goal_temps[i] - temperatures[i];
 	}
 
 
-	return KC*error + KI*integral* + KD*derivative;
+	return KC*error + KI*integral + KD*derivative;
 }
 
 
@@ -81,6 +82,7 @@ int main(int argc,char *argv[]) {
 
 	int timestamp = 0;
 	for(;;) {
+		//TODO: medir tempo de execução / garantir loop a cada 0,1s
 		temp_read = temperature(fd_temp);
 		store_temperature(temp_read);
 		

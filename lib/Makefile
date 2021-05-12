@@ -7,7 +7,7 @@ PREFIX?=$(HOME)
 FLAGS=-O2 -Wall -MMD
 INCLUDE=-I. -I../include
 LIBDIR=-L../lib
-LIBS=-lgalileo -lm
+LIBS= -lm
 
 CC=$(CROSS_COMPILE)gcc
 CCAR=$(CROSS_COMPILE)ar
