@@ -3,6 +3,7 @@
 #include <pwm_control.h>
 #include <unistd.h>
 #include <galileoio.h>
+#include <stdlib.h>
 
 #define OUTPUT_FILE "temp.out" //!< Define the output file to store the temperature values.
 
@@ -65,7 +66,7 @@ int main(int argc,char *argv[]) {
 	FILE *file;
 
 	if(argc > 1) {
-		goal_v = (int) argv[1];
+		goal_v = atoi(argv[1]);
 	}
 	
         if((file=fopen(OUTPUT_FILE,"w")) == NULL)
