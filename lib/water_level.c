@@ -32,16 +32,16 @@
 
 
 /**
- * Returns if the minimum water level is available. 
+ * Initializer to water level sensor funcions (ad0 for this project).
+ * @return I02 file handler if successful, -1 otherwise.
  */
-int water_level(void) {
-	//int led_fd;
-	int water_level_sensor_1_fd;
-	char w_lvl;
+int init_water_lvl_sensor() {
+        int water_level_sensor_1_fd;
 	int fd;
         char s[20];
 	int n;
-	
+
+		
 	fd=open("/sys/devices/virtual/dmi/id/board_name",O_RDONLY);
 	n=read(fd,s,sizeof s);
 	close(fd);
@@ -54,21 +54,33 @@ int water_level(void) {
 	}
 	else if(strncmp(s,"GalileoGen2",sizeof s) == 0)
 	{
-		printf("\nGalileoGen2 board not supported.");
+		perror("\nGalileoGen2 board not supported.");
 		return -1;
 	}
         else return -1;
 
+
+	return water_level_sensor_1_fd;
+}
+
+
+
+/**
+ * Returns if the minimum water level is available. 
+ */
+int water_level(int water_level_sensor_1_fd) {
+	char w_lvl;
 	
 	lseek(water_level_sensor_1_fd,0,SEEK_SET);
 	read(water_level_sensor_1_fd,&w_lvl,sizeof w_lvl);
 	
-	//lseek(led_fd,0,SEEK_SET);
-	//write(led_fd,&w_lvl,sizeof w_lvl);
-	
-	//close(led_fd);
-	close(water_level_sensor_1_fd);
-
 	w_lvl = !(w_lvl-'0');  
 	return (int)w_lvl;
+}
+
+/**
+ * Closes I02 file.
+ */
+void end_water_lvl_sensor(int fd) {
+	close(fd);
 }

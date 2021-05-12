@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <sensors.h>
 #include <pwm_control.h>
+#include <unistd.h>
 #include <galileoio.h>
 
 #define OUTPUT_FILE "temp.out" //!< Define the output file to store the temperature values.
@@ -9,12 +10,13 @@
 #define KI 0 //!< Define the PID integral constant value.
 #define KD 0 //!< Define the PID derivate constant value.
 
-#define MAX_TEMP_OBS 1000
+#define MAX_TEMP_OBS 10000
 double temperatures[MAX_TEMP_OBS];
 int last_temp_index = 0;
 
 double goal_temps[MAX_TEMP_OBS];
 
+/**  Stores current temperature value in temperature buffer */
 void store_temperature(double temp) {
 	last_temp_index++;
 
@@ -24,7 +26,7 @@ void store_temperature(double temp) {
 	temperatures[last_temp_index] = temp;
 }
 
-
+/** Calculate PID controller using the desired temperature */
 double pid_controller(double goal_temp) {
 	double error;
 	double derivative;
@@ -34,7 +36,7 @@ double pid_controller(double goal_temp) {
 	goal_temps[last_temp_index] = goal_temp;
 	// Calculate error
 	error = goal_temp - temperatures[last_temp_index];
-	printf(" Error:%f / ", error);
+	//printf(" Error:%f / ", error);
 	// Calculate derivative temperature
 	if(last_temp_index >= 1) {
 		derivative = (goal_temps[last_temp_index] - temperatures[last_temp_index]) 
@@ -72,33 +74,36 @@ int main(int argc,char *argv[]) {
                 return -1;
         }	
 
-	//int fd_wlvl = wlvl_init() ?
-	//int fd_temp = temperature_init() ?
+	int fd_wlvl = init_water_lvl_sensor();
+	int fd_temp = init_temp_sensor();
 	int fd_dc = pwm_init();
 
 	int timestamp = 0;
 	for(;;) {
-		temp_read = temperature();
+		temp_read = temperature(fd_temp);
 		store_temperature(temp_read);
 		
-		is_water_lvl = water_level();
+		is_water_lvl = water_level(fd_wlvl);
 		printf("Temperature:%f / Water Lv:%d / Goal temp:%d\n", temperatures[last_temp_index], is_water_lvl, goal_v);
-		fprintf(file, "%f\t%d\n", temp_read, timestamp);
+		fprintf(file, "%f\t%d\t%d\n", temp_read, goal_v, timestamp);
 
 		if (is_water_lvl) {
 			pid_tension = pid_controller(goal_v);
-			printf("\n PID V:%f",pid_tension);
+			//printf("\n PID V:%f",pid_tension);
 			pwm_tension(fd_dc, pid_tension);
 		}
 		else {
-			printf("\n PID V:%f",0.0);
+			//printf("\n PID V:%f",0.0);
 			pwm_tension(fd_dc, 0);
 		}
 
+		usleep(100);
 		timestamp++;
 	}
 
 	pwm_end(fd_dc);
+	end_temp_sensor(fd_temp);
+	end_water_lvl_sensor(fd_wlvl);
 	fclose(file);
 
 	return 0;

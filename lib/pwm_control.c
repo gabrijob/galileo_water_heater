@@ -61,11 +61,13 @@ int pwm_init() {
  * @arg Duty cycle file handler
  * @arg Desired average tension 
  */ 
-void pwm_tension(int fd_dc, int avg_tension) {
+void pwm_tension(int fd_dc, double avg_tension) {
         int new_dc;
 	char str[80];
 
-	new_dc = avg_tension/VCC * PWM_PERIOD;
+	if (avg_tension > VCC) new_dc = PWM_PERIOD;
+	else if (avg_tension < 0) new_dc = 0;
+	else new_dc = avg_tension/VCC * PWM_PERIOD;
 
         lseek(fd_dc,0,SEEK_SET);
         snprintf(str,sizeof str,"%d\n",new_dc);

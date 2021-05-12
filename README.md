@@ -1,6 +1,6 @@
 Autores: 
 	00244073 - Gabriel J.A Grabher <gabriel.grabher@inf.ufrgs.br>
-
+	00273166 - João Pedro Gubert de Souza <joao.souza@inf.ufrgs.br>
 
 Controlador de aquecedor de agua com uma placa Galileo.
 

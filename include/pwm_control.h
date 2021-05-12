@@ -31,7 +31,7 @@ extern "C"
 #endif
 
 extern int pwm_init(void);
-extern void pwm_tension(int fd_dc, int avg_tension);
+extern void pwm_tension(int fd_dc, double avg_tension);
 void pwm_end(int fd_dc);
 
 #ifdef __cplusplus

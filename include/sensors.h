@@ -32,8 +32,13 @@ extern "C"
 
 #define VCC 3.3 //!< Define the VCC value.
 
-extern int water_level(void);
-extern double temperature(void);
+extern int water_level(int water_level_sensor_1_fd);
+extern double temperature(int fd);
+extern int init_temp_sensor(void);
+extern void end_temp_sensor(int fd_temp);
+extern int init_water_lvl_sensor(void);
+extern void end_water_lvl_sensor(int fd);
+
 
 #ifdef __cplusplus
 };
