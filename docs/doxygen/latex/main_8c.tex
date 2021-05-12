@@ -1,0 +1,130 @@
+\hypertarget{main_8c}{}\doxysection{Referência ao ficheiro C\+:/\+Users/\+João/\+UFRGS/micros/galileo\+\_\+water\+\_\+heater/src/main.c}
+\label{main_8c}\index{C:/Users/João/UFRGS/micros/galileo\_water\_heater/src/main.c@{C:/Users/João/UFRGS/micros/galileo\_water\_heater/src/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sensors.\+h$>$}\newline
+{\ttfamily \#include $<$pwm\+\_\+control.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$galileoio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a61dd80c2fec5621edf38c3347b55ad42}{OUTPUT\+\_\+\+FILE}}~\char`\"{}temp.\+out\char`\"{}
+\begin{DoxyCompactList}\small\item\em Define the output file to store the temperature values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8c_a73764abcca0b8bbf6bf355d9f1bab0b9}{KC}}~0.\+02
+\begin{DoxyCompactList}\small\item\em Define the PID Error constant value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8c_ade82752ae1652fdf0df9df7a16ffda29}{KI}}~0
+\begin{DoxyCompactList}\small\item\em Define the PID integral constant value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8c_ad4f9673d16d231643789f081068d2372}{KD}}~0
+\begin{DoxyCompactList}\small\item\em Define the PID derivate constant value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8c_a574730323413d8b893e781b79ca00fec}{MAX\+\_\+\+TEMP\+\_\+\+OBS}}~10000
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_abaf2769c02ebb8aa9bdd1dbfce9ae7b2}{store\+\_\+temperature}} (double temp)
+\item 
+double \mbox{\hyperlink{main_8c_a4c495f7915568b6ee871faac155d9dc3}{pid\+\_\+controller}} (double goal\+\_\+temp)
+\item 
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{main_8c_aa405860de389666f4592ec170210b23c}{temperatures}} \mbox{[}\mbox{\hyperlink{main_8c_a574730323413d8b893e781b79ca00fec}{MAX\+\_\+\+TEMP\+\_\+\+OBS}}\mbox{]}
+\item 
+int \mbox{\hyperlink{main_8c_a5a5fababe92c1d899d338fe02fb06198}{last\+\_\+temp\+\_\+index}} = 0
+\item 
+double \mbox{\hyperlink{main_8c_a71dae184307dc984af0e1717fa23500b}{goal\+\_\+temps}} \mbox{[}\mbox{\hyperlink{main_8c_a574730323413d8b893e781b79ca00fec}{MAX\+\_\+\+TEMP\+\_\+\+OBS}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{main_8c_a73764abcca0b8bbf6bf355d9f1bab0b9}\label{main_8c_a73764abcca0b8bbf6bf355d9f1bab0b9}} 
+\index{main.c@{main.c}!KC@{KC}}
+\index{KC@{KC}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{KC}{KC}}
+{\footnotesize\ttfamily \#define KC~0.\+02}
+
+
+
+Define the PID Error constant value. 
+
+\mbox{\Hypertarget{main_8c_ad4f9673d16d231643789f081068d2372}\label{main_8c_ad4f9673d16d231643789f081068d2372}} 
+\index{main.c@{main.c}!KD@{KD}}
+\index{KD@{KD}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{KD}{KD}}
+{\footnotesize\ttfamily \#define KD~0}
+
+
+
+Define the PID derivate constant value. 
+
+\mbox{\Hypertarget{main_8c_ade82752ae1652fdf0df9df7a16ffda29}\label{main_8c_ade82752ae1652fdf0df9df7a16ffda29}} 
+\index{main.c@{main.c}!KI@{KI}}
+\index{KI@{KI}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{KI}{KI}}
+{\footnotesize\ttfamily \#define KI~0}
+
+
+
+Define the PID integral constant value. 
+
+\mbox{\Hypertarget{main_8c_a574730323413d8b893e781b79ca00fec}\label{main_8c_a574730323413d8b893e781b79ca00fec}} 
+\index{main.c@{main.c}!MAX\_TEMP\_OBS@{MAX\_TEMP\_OBS}}
+\index{MAX\_TEMP\_OBS@{MAX\_TEMP\_OBS}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_TEMP\_OBS}{MAX\_TEMP\_OBS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+TEMP\+\_\+\+OBS~10000}
+
+\mbox{\Hypertarget{main_8c_a61dd80c2fec5621edf38c3347b55ad42}\label{main_8c_a61dd80c2fec5621edf38c3347b55ad42}} 
+\index{main.c@{main.c}!OUTPUT\_FILE@{OUTPUT\_FILE}}
+\index{OUTPUT\_FILE@{OUTPUT\_FILE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_FILE}{OUTPUT\_FILE}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+FILE~\char`\"{}temp.\+out\char`\"{}}
+
+
+
+Define the output file to store the temperature values. 
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a4c495f7915568b6ee871faac155d9dc3}\label{main_8c_a4c495f7915568b6ee871faac155d9dc3}} 
+\index{main.c@{main.c}!pid\_controller@{pid\_controller}}
+\index{pid\_controller@{pid\_controller}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{pid\_controller()}{pid\_controller()}}
+{\footnotesize\ttfamily double pid\+\_\+controller (\begin{DoxyParamCaption}\item[{double}]{goal\+\_\+temp }\end{DoxyParamCaption})}
+
+Calculate PID controller using the desired temperature \mbox{\Hypertarget{main_8c_abaf2769c02ebb8aa9bdd1dbfce9ae7b2}\label{main_8c_abaf2769c02ebb8aa9bdd1dbfce9ae7b2}} 
+\index{main.c@{main.c}!store\_temperature@{store\_temperature}}
+\index{store\_temperature@{store\_temperature}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{store\_temperature()}{store\_temperature()}}
+{\footnotesize\ttfamily void store\+\_\+temperature (\begin{DoxyParamCaption}\item[{double}]{temp }\end{DoxyParamCaption})}
+
+Stores current temperature value in temperature buffer 
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{main_8c_a71dae184307dc984af0e1717fa23500b}\label{main_8c_a71dae184307dc984af0e1717fa23500b}} 
+\index{main.c@{main.c}!goal\_temps@{goal\_temps}}
+\index{goal\_temps@{goal\_temps}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{goal\_temps}{goal\_temps}}
+{\footnotesize\ttfamily double goal\+\_\+temps\mbox{[}\mbox{\hyperlink{main_8c_a574730323413d8b893e781b79ca00fec}{MAX\+\_\+\+TEMP\+\_\+\+OBS}}\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_a5a5fababe92c1d899d338fe02fb06198}\label{main_8c_a5a5fababe92c1d899d338fe02fb06198}} 
+\index{main.c@{main.c}!last\_temp\_index@{last\_temp\_index}}
+\index{last\_temp\_index@{last\_temp\_index}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{last\_temp\_index}{last\_temp\_index}}
+{\footnotesize\ttfamily int last\+\_\+temp\+\_\+index = 0}
+
+\mbox{\Hypertarget{main_8c_aa405860de389666f4592ec170210b23c}\label{main_8c_aa405860de389666f4592ec170210b23c}} 
+\index{main.c@{main.c}!temperatures@{temperatures}}
+\index{temperatures@{temperatures}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{temperatures}{temperatures}}
+{\footnotesize\ttfamily double temperatures\mbox{[}\mbox{\hyperlink{main_8c_a574730323413d8b893e781b79ca00fec}{MAX\+\_\+\+TEMP\+\_\+\+OBS}}\mbox{]}}
+

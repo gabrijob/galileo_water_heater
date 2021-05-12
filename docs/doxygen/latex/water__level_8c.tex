@@ -1,0 +1,42 @@
+\hypertarget{water__level_8c}{}\doxysection{Referência ao ficheiro C\+:/\+Users/\+João/\+UFRGS/micros/galileo\+\_\+water\+\_\+heater/lib/water\+\_\+level.c}
+\label{water__level_8c}\index{C:/Users/João/UFRGS/micros/galileo\_water\_heater/lib/water\_level.c@{C:/Users/João/UFRGS/micros/galileo\_water\_heater/lib/water\_level.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$galileoio.\+h$>$}\newline
+{\ttfamily \#include $<$sensors.\+h$>$}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{water__level_8c_ae9517644f109703a1491e152893837a5}{init\+\_\+water\+\_\+lvl\+\_\+sensor}} ()
+\item 
+int \mbox{\hyperlink{water__level_8c_a0de71afb694ee8c781935229c4716f2a}{water\+\_\+level}} (int water\+\_\+level\+\_\+sensor\+\_\+1\+\_\+fd)
+\item 
+void \mbox{\hyperlink{water__level_8c_aebdb2d136b99c035075b1d4de66c8a68}{end\+\_\+water\+\_\+lvl\+\_\+sensor}} (int fd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{water__level_8c_aebdb2d136b99c035075b1d4de66c8a68}\label{water__level_8c_aebdb2d136b99c035075b1d4de66c8a68}} 
+\index{water\_level.c@{water\_level.c}!end\_water\_lvl\_sensor@{end\_water\_lvl\_sensor}}
+\index{end\_water\_lvl\_sensor@{end\_water\_lvl\_sensor}!water\_level.c@{water\_level.c}}
+\doxysubsubsection{\texorpdfstring{end\_water\_lvl\_sensor()}{end\_water\_lvl\_sensor()}}
+{\footnotesize\ttfamily void end\+\_\+water\+\_\+lvl\+\_\+sensor (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+Closes I02 file. \mbox{\Hypertarget{water__level_8c_ae9517644f109703a1491e152893837a5}\label{water__level_8c_ae9517644f109703a1491e152893837a5}} 
+\index{water\_level.c@{water\_level.c}!init\_water\_lvl\_sensor@{init\_water\_lvl\_sensor}}
+\index{init\_water\_lvl\_sensor@{init\_water\_lvl\_sensor}!water\_level.c@{water\_level.c}}
+\doxysubsubsection{\texorpdfstring{init\_water\_lvl\_sensor()}{init\_water\_lvl\_sensor()}}
+{\footnotesize\ttfamily int init\+\_\+water\+\_\+lvl\+\_\+sensor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializer to water level sensor funcions (ad0 for this project). \begin{DoxyReturn}{Retorna}
+I02 file handler if successful, -\/1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{water__level_8c_a0de71afb694ee8c781935229c4716f2a}\label{water__level_8c_a0de71afb694ee8c781935229c4716f2a}} 
+\index{water\_level.c@{water\_level.c}!water\_level@{water\_level}}
+\index{water\_level@{water\_level}!water\_level.c@{water\_level.c}}
+\doxysubsubsection{\texorpdfstring{water\_level()}{water\_level()}}
+{\footnotesize\ttfamily int water\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{water\+\_\+level\+\_\+sensor\+\_\+1\+\_\+fd }\end{DoxyParamCaption})}
+
+Returns if the minimum water level is available. 

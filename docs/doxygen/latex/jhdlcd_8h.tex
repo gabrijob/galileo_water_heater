@@ -1,0 +1,469 @@
+\hypertarget{jhdlcd_8h}{}\doxysection{Referência ao ficheiro C\+:/\+Users/\+João/\+UFRGS/micros/galileo\+\_\+water\+\_\+heater/include/jhdlcd.h}
+\label{jhdlcd_8h}\index{C:/Users/João/UFRGS/micros/galileo\_water\_heater/include/jhdlcd.h@{C:/Users/João/UFRGS/micros/galileo\_water\_heater/include/jhdlcd.h}}
+\doxysubsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59}{LCD\+\_\+\+ADDRESSES}} \{ \mbox{\hyperlink{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59a9a914f6be297e4d7bb14464f67da1cba}{LCD\+\_\+\+ADDR}} = 0x7c $>$$>$ 1
+, \mbox{\hyperlink{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59a1f83aae9eff1b5b082673fbba62611d6}{BL\+\_\+\+ADDR}} = 0xc4 $>$$>$ 1
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3}{LCD\+\_\+\+COMMANDS}} \{ \newline
+\mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3aab5255006289c179b4c14e11038cf087}{LCD\+\_\+\+SCREENCLEAR}} = 0x01
+, \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a15a2fbbdd21deb38e6f02541d1994d2f}{LCD\+\_\+\+CURSORRETURN}} = 0x02
+, \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a1452fbaefef9dde563f6602de21e2c37}{LCD\+\_\+\+INPUTSET}} = 0x04
+, \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a77153c5fad3622a8068e9d749d80eaab}{LCD\+\_\+\+DISPLAYSWITCH}} = 0x08
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3ad88076dac22a5544fa19a5c530878340}{LCD\+\_\+\+SHIFT}} = 0x10
+, \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a15f79536fc69123ce44756608e03e7cc}{LCD\+\_\+\+FUNCTIONSET}} = 0x20
+, \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a8665ef1c959f620c92fcec0003523618}{LCD\+\_\+\+CGRAMADDRSET}} = 0x40
+, \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3ae452acabda61e904d910c59fede1ecdb}{LCD\+\_\+\+DDRAMADDRSET}} = 0x80
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288b}{LCD\+\_\+\+REGS}} \{ \mbox{\hyperlink{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288ba6d6f07b23ad1cbaf5281bd5a4421141e}{LCD\+\_\+\+C0}} = 0x80
+, \mbox{\hyperlink{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288ba08e9691eba5f82c3882ce4fc124d0abb}{LCD\+\_\+\+RS}} = 0x40
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7c}{LCD\+\_\+\+INPUTSET\+\_\+\+BITS}} \{ \mbox{\hyperlink{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7cae8ce2f43c00b9f0dfabd43ca4cb93860}{LCD\+\_\+\+ENTRYRIGHT}} = 0x00
+, \mbox{\hyperlink{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7ca20c396253d708f718c29ffd2a67797b9}{LCD\+\_\+\+ENTRYLEFT}} = 0x02
+, \mbox{\hyperlink{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7cab8e915123e98ea82885b03d2ac8c7f2a}{LCD\+\_\+\+INCREMENT}} = 0x01
+, \mbox{\hyperlink{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7caf2e260f2efc6958b75405d337e371d1c}{LCD\+\_\+\+DECREMENT}} = 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03c}{LCD\+\_\+\+DISPLAYSWITCH\+\_\+\+BITS}} \{ \newline
+\mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca5ebdca6d32a72f55ee816098f9fd2dbc}{LCD\+\_\+\+DISPLAYON}} = 0x04
+, \mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca01cd657be293ab6e044c26fe4e65c404}{LCD\+\_\+\+DISPLAYOFF}} = 0x00
+, \mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca813bf3cb47795a56fdaba13c2deff19b}{LCD\+\_\+\+CURSORON}} = 0x02
+, \mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca1f3f3ace2d8c2ba652ab6ee57e8148d1}{LCD\+\_\+\+CURSOROFF}} = 0x00
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca8e2bd21d73a3cab8f5072acaeba50735}{LCD\+\_\+\+BLINKON}} = 0x01
+, \mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca8327f3d1d3c1429587ec74977aa71ed8}{LCD\+\_\+\+BLINKOFF}} = 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5}{LCD\+\_\+\+SHIFT\+\_\+\+BITS}} \{ \mbox{\hyperlink{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5ab749b2416f152c53fed0f090065dcc17}{LCD\+\_\+\+SHIFTDISPLAY}} = 0x08
+, \mbox{\hyperlink{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a929ad8d944368c44fb623fe3753e1e56}{LCD\+\_\+\+SHIFTCURSOR}} = 0x00
+, \mbox{\hyperlink{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a59868c97129424bd88b77f82b3fe254c}{LCD\+\_\+\+SHIFTRIGHT}} = 0x04
+, \mbox{\hyperlink{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a2f1c267a9885d41f2442c8641fc0c847}{LCD\+\_\+\+SHIFTLEFT}} = 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8}{LCD\+\_\+\+FUNCTIONSET\+\_\+\+BITS}} \{ \newline
+\mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8afc44e40e0e8e902daec75acd53a4beea}{LCD\+\_\+8\+BITMODE}} = 0x10
+, \mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8aa7cb20c68502e90ba54825200880a87f}{LCD\+\_\+4\+BITMODE}} = 0x00
+, \mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ae37f6ab426e92d23fc0a881d42ff0bf8}{LCD\+\_\+2\+LINE}} = 0x08
+, \mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ac39e2a0f515d18e25188fc2fba0d7f03}{LCD\+\_\+1\+LINE}} = 0x00
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ade89674a4e2611679321f0db0e2cfa63}{LCD\+\_\+5x10\+DOTS}} = 0x04
+, \mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ad0f6432c55b5534e47027382adc74082}{LCD\+\_\+5x7\+DOTS}} = 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4e}{BL\+\_\+\+REGS}} \{ \newline
+\mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea3c7421fb78494b647a74f95e2267bb04}{BL\+\_\+\+RED}} = 0x04
+, \mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea06c0c9f8c13d22fc8012bb46daf4a68f}{BL\+\_\+\+GREEN}} = 0x03
+, \mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4eae394a3eeb3fd9cafbbeb6047c4b97439}{BL\+\_\+\+BLUE}} = 0x02
+, \mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea91d6c697048a6b9b61ce5dbc128b2165}{BL\+\_\+\+MODE1}} = 0x00
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4eaa28bb959498d110a48c35b8bd412f07b}{BL\+\_\+\+MODE2}} = 0x01
+, \mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea6e39c9c4a9f7644b1f5612414515fb17}{BL\+\_\+\+LEDOUT}} = 0x08
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827}{BL\+\_\+\+MODE1\+\_\+\+BITS}} \{ \newline
+\mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a912ce1d3acb66828913dbd56ed72097f}{BL\+\_\+\+AI2}} = 0x80
+, \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a111f45b2583369e478845e12ca30001a}{BL\+\_\+\+AI1}} = 0x40
+, \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a62e7282fbf181b0f87ed5ffce508ef72}{BL\+\_\+\+AI0}} = 0x20
+, \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a359dd4705d77bf4aebe0ece1e1f1bc6e}{BL\+\_\+\+SLEEP}} = 0x10
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827aa4f87e2bf82bb47236d5884cec55553d}{BL\+\_\+\+SUB1}} = 0x08
+, \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827ada5b9076acd07f117c20b4086d5df6e2}{BL\+\_\+\+SUB2}} = 0x04
+, \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a14332eb764582ff8addb0fe1ffbf4de4}{BL\+\_\+\+SUB3}} = 0x02
+, \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a8a25e787607e7869cadf6c3fe516569e}{BL\+\_\+\+ALLCALL}} = 0x01
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4f}{BL\+\_\+\+MODE2\+\_\+\+BITS}} \{ \newline
+\mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fadea7df286e1622f39fc2b1f48d985aa9}{BL\+\_\+\+DMBLNK}} = 0x20
+, \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa4f330f98e8dc216cd433a35c7ecea3c5}{BL\+\_\+\+INVRT}} = 0x10
+, \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa395430af5d9357cd4496e15203409b79}{BL\+\_\+0\+CH}} = 0x08
+, \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa7bc01239ddec63544988c97d136b7351}{BL\+\_\+\+OUTDRV}} = 0x04
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4faff45dc0bd34994fd5d34c8f61bc91c49}{BL\+\_\+\+OUTNE1}} = 0x02
+, \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fadea7380c84e5e9bee6fd7ecc4541dce2}{BL\+\_\+\+OUTNE0}} = 0x01
+, \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fae754081e5368cc33b214367c66473d66}{BL\+\_\+\+OUTNE\+\_\+\+OFF}} = 0x00
+, \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa20cc499d19f69e8b6dbd6d105b3e5079}{BL\+\_\+\+OUTNE\+\_\+\+OUTDRV}} =0x01
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fae4e86c7b6755643b5564ca6a181e61bb}{BL\+\_\+\+OUTNE\+\_\+\+HIZ}} = 0x10
+ \}
+\item 
+enum \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6}{BL\+\_\+\+LEDOUT\+\_\+\+BITS}} \{ \newline
+\mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aade4e2f8451db8309d84183e5186fc78}{BL\+\_\+\+BLUE\+\_\+\+OFF}} = 0x00
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a3c11dc1c5189b50951e4e11dd1a4399f}{BL\+\_\+\+BLUE\+\_\+\+FULL}} = 0x01
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a4a355a6e917d77a79563ce55e321f6e3}{BL\+\_\+\+BLUE\+\_\+\+PWM}} = 0x02
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aef082a818cc9a69da92368dcee20b4b8}{BL\+\_\+\+BLUE\+\_\+\+GRPPWM}} = 0x03
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a35892fc182127a47f3e67ac48f8de86e}{BL\+\_\+\+GREEN\+\_\+\+OFF}} = 0x00 $<$$<$ 2
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a84f79ac77e8b2bbe80032769cc5a80e7}{BL\+\_\+\+GREEN\+\_\+\+FULL}} = 0x01 $<$$<$ 2
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aa9187fff36ffcd3ce0dc84777a1c94f2}{BL\+\_\+\+GREEN\+\_\+\+PWM}} = 0x02 $<$$<$ 2
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a33bdc8fd8d5852c27d0bc27b4aaaf38e}{BL\+\_\+\+GREEN\+\_\+\+GRPPWM}} =0x03 $<$$<$ 2
+, \newline
+\mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6afd1560fba9780934a980488ac01f9c0f}{BL\+\_\+\+RED\+\_\+\+OFF}} = 0x00 $<$$<$ 4
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a9a2162817bb53eaa3ce420d120446cd0}{BL\+\_\+\+RED\+\_\+\+FULL}} = 0x01 $<$$<$ 4
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a11478bf4ebbaeaa5507b0e5869658362}{BL\+\_\+\+RED\+\_\+\+PWM}} = 0x02 $<$$<$ 4
+, \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a4b4d96e1bf055f2ef3e9268b846941c7}{BL\+\_\+\+RED\+\_\+\+GRPPWM}} = 0x03 $<$$<$ 4
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos valores da enumeração}
+\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6}} 
+\index{jhdlcd.h@{jhdlcd.h}!BL\_LEDOUT\_BITS@{BL\_LEDOUT\_BITS}}
+\index{BL\_LEDOUT\_BITS@{BL\_LEDOUT\_BITS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{BL\_LEDOUT\_BITS}{BL\_LEDOUT\_BITS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6}{BL\+\_\+\+LEDOUT\+\_\+\+BITS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_BLUE\_OFF@{BL\_BLUE\_OFF}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_BLUE\_OFF@{BL\_BLUE\_OFF}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aade4e2f8451db8309d84183e5186fc78}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aade4e2f8451db8309d84183e5186fc78}} 
+BL\+\_\+\+BLUE\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_BLUE\_FULL@{BL\_BLUE\_FULL}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_BLUE\_FULL@{BL\_BLUE\_FULL}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a3c11dc1c5189b50951e4e11dd1a4399f}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a3c11dc1c5189b50951e4e11dd1a4399f}} 
+BL\+\_\+\+BLUE\+\_\+\+FULL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_BLUE\_PWM@{BL\_BLUE\_PWM}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_BLUE\_PWM@{BL\_BLUE\_PWM}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a4a355a6e917d77a79563ce55e321f6e3}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a4a355a6e917d77a79563ce55e321f6e3}} 
+BL\+\_\+\+BLUE\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_BLUE\_GRPPWM@{BL\_BLUE\_GRPPWM}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_BLUE\_GRPPWM@{BL\_BLUE\_GRPPWM}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aef082a818cc9a69da92368dcee20b4b8}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aef082a818cc9a69da92368dcee20b4b8}} 
+BL\+\_\+\+BLUE\+\_\+\+GRPPWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_GREEN\_OFF@{BL\_GREEN\_OFF}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_GREEN\_OFF@{BL\_GREEN\_OFF}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a35892fc182127a47f3e67ac48f8de86e}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a35892fc182127a47f3e67ac48f8de86e}} 
+BL\+\_\+\+GREEN\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_GREEN\_FULL@{BL\_GREEN\_FULL}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_GREEN\_FULL@{BL\_GREEN\_FULL}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a84f79ac77e8b2bbe80032769cc5a80e7}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a84f79ac77e8b2bbe80032769cc5a80e7}} 
+BL\+\_\+\+GREEN\+\_\+\+FULL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_GREEN\_PWM@{BL\_GREEN\_PWM}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_GREEN\_PWM@{BL\_GREEN\_PWM}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aa9187fff36ffcd3ce0dc84777a1c94f2}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6aa9187fff36ffcd3ce0dc84777a1c94f2}} 
+BL\+\_\+\+GREEN\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_GREEN\_GRPPWM@{BL\_GREEN\_GRPPWM}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_GREEN\_GRPPWM@{BL\_GREEN\_GRPPWM}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a33bdc8fd8d5852c27d0bc27b4aaaf38e}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a33bdc8fd8d5852c27d0bc27b4aaaf38e}} 
+BL\+\_\+\+GREEN\+\_\+\+GRPPWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_RED\_OFF@{BL\_RED\_OFF}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_RED\_OFF@{BL\_RED\_OFF}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6afd1560fba9780934a980488ac01f9c0f}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6afd1560fba9780934a980488ac01f9c0f}} 
+BL\+\_\+\+RED\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_RED\_FULL@{BL\_RED\_FULL}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_RED\_FULL@{BL\_RED\_FULL}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a9a2162817bb53eaa3ce420d120446cd0}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a9a2162817bb53eaa3ce420d120446cd0}} 
+BL\+\_\+\+RED\+\_\+\+FULL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_RED\_PWM@{BL\_RED\_PWM}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_RED\_PWM@{BL\_RED\_PWM}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a11478bf4ebbaeaa5507b0e5869658362}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a11478bf4ebbaeaa5507b0e5869658362}} 
+BL\+\_\+\+RED\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_RED\_GRPPWM@{BL\_RED\_GRPPWM}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_RED\_GRPPWM@{BL\_RED\_GRPPWM}}}\mbox{\Hypertarget{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a4b4d96e1bf055f2ef3e9268b846941c7}\label{jhdlcd_8h_ae4aae0e9285e373c4b966297dd0ac6a6a4b4d96e1bf055f2ef3e9268b846941c7}} 
+BL\+\_\+\+RED\+\_\+\+GRPPWM&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827}} 
+\index{jhdlcd.h@{jhdlcd.h}!BL\_MODE1\_BITS@{BL\_MODE1\_BITS}}
+\index{BL\_MODE1\_BITS@{BL\_MODE1\_BITS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{BL\_MODE1\_BITS}{BL\_MODE1\_BITS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827}{BL\+\_\+\+MODE1\+\_\+\+BITS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_AI2@{BL\_AI2}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_AI2@{BL\_AI2}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a912ce1d3acb66828913dbd56ed72097f}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a912ce1d3acb66828913dbd56ed72097f}} 
+BL\+\_\+\+AI2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_AI1@{BL\_AI1}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_AI1@{BL\_AI1}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a111f45b2583369e478845e12ca30001a}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a111f45b2583369e478845e12ca30001a}} 
+BL\+\_\+\+AI1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_AI0@{BL\_AI0}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_AI0@{BL\_AI0}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a62e7282fbf181b0f87ed5ffce508ef72}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a62e7282fbf181b0f87ed5ffce508ef72}} 
+BL\+\_\+\+AI0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_SLEEP@{BL\_SLEEP}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_SLEEP@{BL\_SLEEP}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a359dd4705d77bf4aebe0ece1e1f1bc6e}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a359dd4705d77bf4aebe0ece1e1f1bc6e}} 
+BL\+\_\+\+SLEEP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_SUB1@{BL\_SUB1}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_SUB1@{BL\_SUB1}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827aa4f87e2bf82bb47236d5884cec55553d}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827aa4f87e2bf82bb47236d5884cec55553d}} 
+BL\+\_\+\+SUB1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_SUB2@{BL\_SUB2}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_SUB2@{BL\_SUB2}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827ada5b9076acd07f117c20b4086d5df6e2}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827ada5b9076acd07f117c20b4086d5df6e2}} 
+BL\+\_\+\+SUB2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_SUB3@{BL\_SUB3}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_SUB3@{BL\_SUB3}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a14332eb764582ff8addb0fe1ffbf4de4}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a14332eb764582ff8addb0fe1ffbf4de4}} 
+BL\+\_\+\+SUB3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_ALLCALL@{BL\_ALLCALL}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_ALLCALL@{BL\_ALLCALL}}}\mbox{\Hypertarget{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a8a25e787607e7869cadf6c3fe516569e}\label{jhdlcd_8h_a7ff600ab0c503e8236b5910a8a4ba827a8a25e787607e7869cadf6c3fe516569e}} 
+BL\+\_\+\+ALLCALL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4f}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4f}} 
+\index{jhdlcd.h@{jhdlcd.h}!BL\_MODE2\_BITS@{BL\_MODE2\_BITS}}
+\index{BL\_MODE2\_BITS@{BL\_MODE2\_BITS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{BL\_MODE2\_BITS}{BL\_MODE2\_BITS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4f}{BL\+\_\+\+MODE2\+\_\+\+BITS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_DMBLNK@{BL\_DMBLNK}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_DMBLNK@{BL\_DMBLNK}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fadea7df286e1622f39fc2b1f48d985aa9}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fadea7df286e1622f39fc2b1f48d985aa9}} 
+BL\+\_\+\+DMBLNK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_INVRT@{BL\_INVRT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_INVRT@{BL\_INVRT}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa4f330f98e8dc216cd433a35c7ecea3c5}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa4f330f98e8dc216cd433a35c7ecea3c5}} 
+BL\+\_\+\+INVRT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_0CH@{BL\_0CH}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_0CH@{BL\_0CH}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa395430af5d9357cd4496e15203409b79}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa395430af5d9357cd4496e15203409b79}} 
+BL\+\_\+0\+CH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_OUTDRV@{BL\_OUTDRV}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_OUTDRV@{BL\_OUTDRV}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa7bc01239ddec63544988c97d136b7351}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa7bc01239ddec63544988c97d136b7351}} 
+BL\+\_\+\+OUTDRV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_OUTNE1@{BL\_OUTNE1}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_OUTNE1@{BL\_OUTNE1}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4faff45dc0bd34994fd5d34c8f61bc91c49}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4faff45dc0bd34994fd5d34c8f61bc91c49}} 
+BL\+\_\+\+OUTNE1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_OUTNE0@{BL\_OUTNE0}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_OUTNE0@{BL\_OUTNE0}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fadea7380c84e5e9bee6fd7ecc4541dce2}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fadea7380c84e5e9bee6fd7ecc4541dce2}} 
+BL\+\_\+\+OUTNE0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_OUTNE\_OFF@{BL\_OUTNE\_OFF}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_OUTNE\_OFF@{BL\_OUTNE\_OFF}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fae754081e5368cc33b214367c66473d66}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fae754081e5368cc33b214367c66473d66}} 
+BL\+\_\+\+OUTNE\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_OUTNE\_OUTDRV@{BL\_OUTNE\_OUTDRV}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_OUTNE\_OUTDRV@{BL\_OUTNE\_OUTDRV}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa20cc499d19f69e8b6dbd6d105b3e5079}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fa20cc499d19f69e8b6dbd6d105b3e5079}} 
+BL\+\_\+\+OUTNE\+\_\+\+OUTDRV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_OUTNE\_HIZ@{BL\_OUTNE\_HIZ}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_OUTNE\_HIZ@{BL\_OUTNE\_HIZ}}}\mbox{\Hypertarget{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fae4e86c7b6755643b5564ca6a181e61bb}\label{jhdlcd_8h_ab2d0bc8f074d7c231e2fd0256d93ef4fae4e86c7b6755643b5564ca6a181e61bb}} 
+BL\+\_\+\+OUTNE\+\_\+\+HIZ&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4e}\label{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4e}} 
+\index{jhdlcd.h@{jhdlcd.h}!BL\_REGS@{BL\_REGS}}
+\index{BL\_REGS@{BL\_REGS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{BL\_REGS}{BL\_REGS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4e}{BL\+\_\+\+REGS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_RED@{BL\_RED}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_RED@{BL\_RED}}}\mbox{\Hypertarget{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea3c7421fb78494b647a74f95e2267bb04}\label{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea3c7421fb78494b647a74f95e2267bb04}} 
+BL\+\_\+\+RED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_GREEN@{BL\_GREEN}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_GREEN@{BL\_GREEN}}}\mbox{\Hypertarget{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea06c0c9f8c13d22fc8012bb46daf4a68f}\label{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea06c0c9f8c13d22fc8012bb46daf4a68f}} 
+BL\+\_\+\+GREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_BLUE@{BL\_BLUE}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_BLUE@{BL\_BLUE}}}\mbox{\Hypertarget{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4eae394a3eeb3fd9cafbbeb6047c4b97439}\label{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4eae394a3eeb3fd9cafbbeb6047c4b97439}} 
+BL\+\_\+\+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_MODE1@{BL\_MODE1}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_MODE1@{BL\_MODE1}}}\mbox{\Hypertarget{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea91d6c697048a6b9b61ce5dbc128b2165}\label{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea91d6c697048a6b9b61ce5dbc128b2165}} 
+BL\+\_\+\+MODE1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_MODE2@{BL\_MODE2}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_MODE2@{BL\_MODE2}}}\mbox{\Hypertarget{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4eaa28bb959498d110a48c35b8bd412f07b}\label{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4eaa28bb959498d110a48c35b8bd412f07b}} 
+BL\+\_\+\+MODE2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_LEDOUT@{BL\_LEDOUT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_LEDOUT@{BL\_LEDOUT}}}\mbox{\Hypertarget{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea6e39c9c4a9f7644b1f5612414515fb17}\label{jhdlcd_8h_abf2db96d898c9fbf20fe3d3283d61a4ea6e39c9c4a9f7644b1f5612414515fb17}} 
+BL\+\_\+\+LEDOUT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59}\label{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59}} 
+\index{jhdlcd.h@{jhdlcd.h}!LCD\_ADDRESSES@{LCD\_ADDRESSES}}
+\index{LCD\_ADDRESSES@{LCD\_ADDRESSES}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_ADDRESSES}{LCD\_ADDRESSES}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59}{LCD\+\_\+\+ADDRESSES}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_ADDR@{LCD\_ADDR}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_ADDR@{LCD\_ADDR}}}\mbox{\Hypertarget{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59a9a914f6be297e4d7bb14464f67da1cba}\label{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59a9a914f6be297e4d7bb14464f67da1cba}} 
+LCD\+\_\+\+ADDR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL\_ADDR@{BL\_ADDR}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!BL\_ADDR@{BL\_ADDR}}}\mbox{\Hypertarget{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59a1f83aae9eff1b5b082673fbba62611d6}\label{jhdlcd_8h_a67f4f761fc782d57c8020219106c4b59a1f83aae9eff1b5b082673fbba62611d6}} 
+BL\+\_\+\+ADDR&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3}} 
+\index{jhdlcd.h@{jhdlcd.h}!LCD\_COMMANDS@{LCD\_COMMANDS}}
+\index{LCD\_COMMANDS@{LCD\_COMMANDS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_COMMANDS}{LCD\_COMMANDS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3}{LCD\+\_\+\+COMMANDS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_SCREENCLEAR@{LCD\_SCREENCLEAR}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_SCREENCLEAR@{LCD\_SCREENCLEAR}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3aab5255006289c179b4c14e11038cf087}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3aab5255006289c179b4c14e11038cf087}} 
+LCD\+\_\+\+SCREENCLEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_CURSORRETURN@{LCD\_CURSORRETURN}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_CURSORRETURN@{LCD\_CURSORRETURN}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a15a2fbbdd21deb38e6f02541d1994d2f}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a15a2fbbdd21deb38e6f02541d1994d2f}} 
+LCD\+\_\+\+CURSORRETURN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_INPUTSET@{LCD\_INPUTSET}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_INPUTSET@{LCD\_INPUTSET}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a1452fbaefef9dde563f6602de21e2c37}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a1452fbaefef9dde563f6602de21e2c37}} 
+LCD\+\_\+\+INPUTSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_DISPLAYSWITCH@{LCD\_DISPLAYSWITCH}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_DISPLAYSWITCH@{LCD\_DISPLAYSWITCH}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a77153c5fad3622a8068e9d749d80eaab}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a77153c5fad3622a8068e9d749d80eaab}} 
+LCD\+\_\+\+DISPLAYSWITCH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_SHIFT@{LCD\_SHIFT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_SHIFT@{LCD\_SHIFT}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3ad88076dac22a5544fa19a5c530878340}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3ad88076dac22a5544fa19a5c530878340}} 
+LCD\+\_\+\+SHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_FUNCTIONSET@{LCD\_FUNCTIONSET}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_FUNCTIONSET@{LCD\_FUNCTIONSET}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a15f79536fc69123ce44756608e03e7cc}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a15f79536fc69123ce44756608e03e7cc}} 
+LCD\+\_\+\+FUNCTIONSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_CGRAMADDRSET@{LCD\_CGRAMADDRSET}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_CGRAMADDRSET@{LCD\_CGRAMADDRSET}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a8665ef1c959f620c92fcec0003523618}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3a8665ef1c959f620c92fcec0003523618}} 
+LCD\+\_\+\+CGRAMADDRSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_DDRAMADDRSET@{LCD\_DDRAMADDRSET}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_DDRAMADDRSET@{LCD\_DDRAMADDRSET}}}\mbox{\Hypertarget{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3ae452acabda61e904d910c59fede1ecdb}\label{jhdlcd_8h_a64fcba9209939ffe184c3d94e833d2f3ae452acabda61e904d910c59fede1ecdb}} 
+LCD\+\_\+\+DDRAMADDRSET&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03c}\label{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03c}} 
+\index{jhdlcd.h@{jhdlcd.h}!LCD\_DISPLAYSWITCH\_BITS@{LCD\_DISPLAYSWITCH\_BITS}}
+\index{LCD\_DISPLAYSWITCH\_BITS@{LCD\_DISPLAYSWITCH\_BITS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_DISPLAYSWITCH\_BITS}{LCD\_DISPLAYSWITCH\_BITS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03c}{LCD\+\_\+\+DISPLAYSWITCH\+\_\+\+BITS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_DISPLAYON@{LCD\_DISPLAYON}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_DISPLAYON@{LCD\_DISPLAYON}}}\mbox{\Hypertarget{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca5ebdca6d32a72f55ee816098f9fd2dbc}\label{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca5ebdca6d32a72f55ee816098f9fd2dbc}} 
+LCD\+\_\+\+DISPLAYON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_DISPLAYOFF@{LCD\_DISPLAYOFF}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_DISPLAYOFF@{LCD\_DISPLAYOFF}}}\mbox{\Hypertarget{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca01cd657be293ab6e044c26fe4e65c404}\label{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca01cd657be293ab6e044c26fe4e65c404}} 
+LCD\+\_\+\+DISPLAYOFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_CURSORON@{LCD\_CURSORON}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_CURSORON@{LCD\_CURSORON}}}\mbox{\Hypertarget{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca813bf3cb47795a56fdaba13c2deff19b}\label{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca813bf3cb47795a56fdaba13c2deff19b}} 
+LCD\+\_\+\+CURSORON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_CURSOROFF@{LCD\_CURSOROFF}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_CURSOROFF@{LCD\_CURSOROFF}}}\mbox{\Hypertarget{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca1f3f3ace2d8c2ba652ab6ee57e8148d1}\label{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca1f3f3ace2d8c2ba652ab6ee57e8148d1}} 
+LCD\+\_\+\+CURSOROFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_BLINKON@{LCD\_BLINKON}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_BLINKON@{LCD\_BLINKON}}}\mbox{\Hypertarget{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca8e2bd21d73a3cab8f5072acaeba50735}\label{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca8e2bd21d73a3cab8f5072acaeba50735}} 
+LCD\+\_\+\+BLINKON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_BLINKOFF@{LCD\_BLINKOFF}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_BLINKOFF@{LCD\_BLINKOFF}}}\mbox{\Hypertarget{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca8327f3d1d3c1429587ec74977aa71ed8}\label{jhdlcd_8h_a2365d5c38f7037112e875d28f393f03ca8327f3d1d3c1429587ec74977aa71ed8}} 
+LCD\+\_\+\+BLINKOFF&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8}\label{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8}} 
+\index{jhdlcd.h@{jhdlcd.h}!LCD\_FUNCTIONSET\_BITS@{LCD\_FUNCTIONSET\_BITS}}
+\index{LCD\_FUNCTIONSET\_BITS@{LCD\_FUNCTIONSET\_BITS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_FUNCTIONSET\_BITS}{LCD\_FUNCTIONSET\_BITS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8}{LCD\+\_\+\+FUNCTIONSET\+\_\+\+BITS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_8BITMODE@{LCD\_8BITMODE}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_8BITMODE@{LCD\_8BITMODE}}}\mbox{\Hypertarget{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8afc44e40e0e8e902daec75acd53a4beea}\label{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8afc44e40e0e8e902daec75acd53a4beea}} 
+LCD\+\_\+8\+BITMODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_4BITMODE@{LCD\_4BITMODE}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_4BITMODE@{LCD\_4BITMODE}}}\mbox{\Hypertarget{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8aa7cb20c68502e90ba54825200880a87f}\label{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8aa7cb20c68502e90ba54825200880a87f}} 
+LCD\+\_\+4\+BITMODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_2LINE@{LCD\_2LINE}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_2LINE@{LCD\_2LINE}}}\mbox{\Hypertarget{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ae37f6ab426e92d23fc0a881d42ff0bf8}\label{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ae37f6ab426e92d23fc0a881d42ff0bf8}} 
+LCD\+\_\+2\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_1LINE@{LCD\_1LINE}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_1LINE@{LCD\_1LINE}}}\mbox{\Hypertarget{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ac39e2a0f515d18e25188fc2fba0d7f03}\label{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ac39e2a0f515d18e25188fc2fba0d7f03}} 
+LCD\+\_\+1\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_5x10DOTS@{LCD\_5x10DOTS}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_5x10DOTS@{LCD\_5x10DOTS}}}\mbox{\Hypertarget{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ade89674a4e2611679321f0db0e2cfa63}\label{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ade89674a4e2611679321f0db0e2cfa63}} 
+LCD\+\_\+5x10\+DOTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_5x7DOTS@{LCD\_5x7DOTS}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_5x7DOTS@{LCD\_5x7DOTS}}}\mbox{\Hypertarget{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ad0f6432c55b5534e47027382adc74082}\label{jhdlcd_8h_a3319f3e368b118e05991087448fec8f8ad0f6432c55b5534e47027382adc74082}} 
+LCD\+\_\+5x7\+DOTS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7c}\label{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7c}} 
+\index{jhdlcd.h@{jhdlcd.h}!LCD\_INPUTSET\_BITS@{LCD\_INPUTSET\_BITS}}
+\index{LCD\_INPUTSET\_BITS@{LCD\_INPUTSET\_BITS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_INPUTSET\_BITS}{LCD\_INPUTSET\_BITS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7c}{LCD\+\_\+\+INPUTSET\+\_\+\+BITS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_ENTRYRIGHT@{LCD\_ENTRYRIGHT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_ENTRYRIGHT@{LCD\_ENTRYRIGHT}}}\mbox{\Hypertarget{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7cae8ce2f43c00b9f0dfabd43ca4cb93860}\label{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7cae8ce2f43c00b9f0dfabd43ca4cb93860}} 
+LCD\+\_\+\+ENTRYRIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_ENTRYLEFT@{LCD\_ENTRYLEFT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_ENTRYLEFT@{LCD\_ENTRYLEFT}}}\mbox{\Hypertarget{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7ca20c396253d708f718c29ffd2a67797b9}\label{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7ca20c396253d708f718c29ffd2a67797b9}} 
+LCD\+\_\+\+ENTRYLEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_INCREMENT@{LCD\_INCREMENT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_INCREMENT@{LCD\_INCREMENT}}}\mbox{\Hypertarget{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7cab8e915123e98ea82885b03d2ac8c7f2a}\label{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7cab8e915123e98ea82885b03d2ac8c7f2a}} 
+LCD\+\_\+\+INCREMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_DECREMENT@{LCD\_DECREMENT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_DECREMENT@{LCD\_DECREMENT}}}\mbox{\Hypertarget{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7caf2e260f2efc6958b75405d337e371d1c}\label{jhdlcd_8h_a62ca15a0f0d1cc6022ae72c56efdeb7caf2e260f2efc6958b75405d337e371d1c}} 
+LCD\+\_\+\+DECREMENT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288b}\label{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288b}} 
+\index{jhdlcd.h@{jhdlcd.h}!LCD\_REGS@{LCD\_REGS}}
+\index{LCD\_REGS@{LCD\_REGS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_REGS}{LCD\_REGS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288b}{LCD\+\_\+\+REGS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_C0@{LCD\_C0}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_C0@{LCD\_C0}}}\mbox{\Hypertarget{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288ba6d6f07b23ad1cbaf5281bd5a4421141e}\label{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288ba6d6f07b23ad1cbaf5281bd5a4421141e}} 
+LCD\+\_\+\+C0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_RS@{LCD\_RS}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_RS@{LCD\_RS}}}\mbox{\Hypertarget{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288ba08e9691eba5f82c3882ce4fc124d0abb}\label{jhdlcd_8h_a5737e3e90a899fa5ae42b19df54b288ba08e9691eba5f82c3882ce4fc124d0abb}} 
+LCD\+\_\+\+RS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5}\label{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5}} 
+\index{jhdlcd.h@{jhdlcd.h}!LCD\_SHIFT\_BITS@{LCD\_SHIFT\_BITS}}
+\index{LCD\_SHIFT\_BITS@{LCD\_SHIFT\_BITS}!jhdlcd.h@{jhdlcd.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_SHIFT\_BITS}{LCD\_SHIFT\_BITS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5}{LCD\+\_\+\+SHIFT\+\_\+\+BITS}}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_SHIFTDISPLAY@{LCD\_SHIFTDISPLAY}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_SHIFTDISPLAY@{LCD\_SHIFTDISPLAY}}}\mbox{\Hypertarget{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5ab749b2416f152c53fed0f090065dcc17}\label{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5ab749b2416f152c53fed0f090065dcc17}} 
+LCD\+\_\+\+SHIFTDISPLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_SHIFTCURSOR@{LCD\_SHIFTCURSOR}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_SHIFTCURSOR@{LCD\_SHIFTCURSOR}}}\mbox{\Hypertarget{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a929ad8d944368c44fb623fe3753e1e56}\label{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a929ad8d944368c44fb623fe3753e1e56}} 
+LCD\+\_\+\+SHIFTCURSOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_SHIFTRIGHT@{LCD\_SHIFTRIGHT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_SHIFTRIGHT@{LCD\_SHIFTRIGHT}}}\mbox{\Hypertarget{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a59868c97129424bd88b77f82b3fe254c}\label{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a59868c97129424bd88b77f82b3fe254c}} 
+LCD\+\_\+\+SHIFTRIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_SHIFTLEFT@{LCD\_SHIFTLEFT}!jhdlcd.h@{jhdlcd.h}}\index{jhdlcd.h@{jhdlcd.h}!LCD\_SHIFTLEFT@{LCD\_SHIFTLEFT}}}\mbox{\Hypertarget{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a2f1c267a9885d41f2442c8641fc0c847}\label{jhdlcd_8h_a2aedc102bad585810095769c14b4f9a5a2f1c267a9885d41f2442c8641fc0c847}} 
+LCD\+\_\+\+SHIFTLEFT&\\
+\hline
+
+\end{DoxyEnumFields}

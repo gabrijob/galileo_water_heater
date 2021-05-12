@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ENG10032 - Aquecedor Eletrico: Referência ao ficheiro C:/Users/João/UFRGS/micros/galileo_water_heater/src/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ENG10032 - Aquecedor Eletrico
+   </div>
+   <div id="projectbrief">Projeto desenvolvido para a disciplina ENG10032 -  Microcontroladores.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a10f97ddb7c06e7845d945af6b41191.html">galileo_water_heater</a></li><li class="navelem"><a class="el" href="dir_06596763c84d7929f6a90507a866ab82.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro main.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="sensors_8h_source.html">sensors.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="pwm__control_8h_source.html">pwm_control.h</a>&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="galileoio_8h_source.html">galileoio.h</a>&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a61dd80c2fec5621edf38c3347b55ad42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a61dd80c2fec5621edf38c3347b55ad42">OUTPUT_FILE</a>&#160;&#160;&#160;&quot;temp.out&quot;</td></tr>
+<tr class="memdesc:a61dd80c2fec5621edf38c3347b55ad42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the output file to store the temperature values.  <a href="main_8c.html#a61dd80c2fec5621edf38c3347b55ad42">Mais...</a><br /></td></tr>
+<tr class="separator:a61dd80c2fec5621edf38c3347b55ad42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73764abcca0b8bbf6bf355d9f1bab0b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a73764abcca0b8bbf6bf355d9f1bab0b9">KC</a>&#160;&#160;&#160;0.02</td></tr>
+<tr class="memdesc:a73764abcca0b8bbf6bf355d9f1bab0b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the PID Error constant value.  <a href="main_8c.html#a73764abcca0b8bbf6bf355d9f1bab0b9">Mais...</a><br /></td></tr>
+<tr class="separator:a73764abcca0b8bbf6bf355d9f1bab0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade82752ae1652fdf0df9df7a16ffda29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ade82752ae1652fdf0df9df7a16ffda29">KI</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ade82752ae1652fdf0df9df7a16ffda29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the PID integral constant value.  <a href="main_8c.html#ade82752ae1652fdf0df9df7a16ffda29">Mais...</a><br /></td></tr>
+<tr class="separator:ade82752ae1652fdf0df9df7a16ffda29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f9673d16d231643789f081068d2372"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad4f9673d16d231643789f081068d2372">KD</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ad4f9673d16d231643789f081068d2372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the PID derivate constant value.  <a href="main_8c.html#ad4f9673d16d231643789f081068d2372">Mais...</a><br /></td></tr>
+<tr class="separator:ad4f9673d16d231643789f081068d2372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a574730323413d8b893e781b79ca00fec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a574730323413d8b893e781b79ca00fec">MAX_TEMP_OBS</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="separator:a574730323413d8b893e781b79ca00fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:abaf2769c02ebb8aa9bdd1dbfce9ae7b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#abaf2769c02ebb8aa9bdd1dbfce9ae7b2">store_temperature</a> (double temp)</td></tr>
+<tr class="separator:abaf2769c02ebb8aa9bdd1dbfce9ae7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c495f7915568b6ee871faac155d9dc3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4c495f7915568b6ee871faac155d9dc3">pid_controller</a> (double goal_temp)</td></tr>
+<tr class="separator:a4c495f7915568b6ee871faac155d9dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:aa405860de389666f4592ec170210b23c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa405860de389666f4592ec170210b23c">temperatures</a> [<a class="el" href="main_8c.html#a574730323413d8b893e781b79ca00fec">MAX_TEMP_OBS</a>]</td></tr>
+<tr class="separator:aa405860de389666f4592ec170210b23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5fababe92c1d899d338fe02fb06198"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a5a5fababe92c1d899d338fe02fb06198">last_temp_index</a> = 0</td></tr>
+<tr class="separator:a5a5fababe92c1d899d338fe02fb06198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71dae184307dc984af0e1717fa23500b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a71dae184307dc984af0e1717fa23500b">goal_temps</a> [<a class="el" href="main_8c.html#a574730323413d8b893e781b79ca00fec">MAX_TEMP_OBS</a>]</td></tr>
+<tr class="separator:a71dae184307dc984af0e1717fa23500b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="a73764abcca0b8bbf6bf355d9f1bab0b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73764abcca0b8bbf6bf355d9f1bab0b9">&#9670;&nbsp;</a></span>KC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KC&#160;&#160;&#160;0.02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define the PID Error constant value. </p>
+
+</div>
+</div>
+<a id="ad4f9673d16d231643789f081068d2372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f9673d16d231643789f081068d2372">&#9670;&nbsp;</a></span>KD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KD&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define the PID derivate constant value. </p>
+
+</div>
+</div>
+<a id="ade82752ae1652fdf0df9df7a16ffda29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade82752ae1652fdf0df9df7a16ffda29">&#9670;&nbsp;</a></span>KI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KI&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define the PID integral constant value. </p>
+
+</div>
+</div>
+<a id="a574730323413d8b893e781b79ca00fec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a574730323413d8b893e781b79ca00fec">&#9670;&nbsp;</a></span>MAX_TEMP_OBS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_TEMP_OBS&#160;&#160;&#160;10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61dd80c2fec5621edf38c3347b55ad42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61dd80c2fec5621edf38c3347b55ad42">&#9670;&nbsp;</a></span>OUTPUT_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_FILE&#160;&#160;&#160;&quot;temp.out&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define the output file to store the temperature values. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c495f7915568b6ee871faac155d9dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c495f7915568b6ee871faac155d9dc3">&#9670;&nbsp;</a></span>pid_controller()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double pid_controller </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>goal_temp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculate PID controller using the desired temperature </p>
+
+</div>
+</div>
+<a id="abaf2769c02ebb8aa9bdd1dbfce9ae7b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaf2769c02ebb8aa9bdd1dbfce9ae7b2">&#9670;&nbsp;</a></span>store_temperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void store_temperature </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>temp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Stores current temperature value in temperature buffer </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="a71dae184307dc984af0e1717fa23500b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71dae184307dc984af0e1717fa23500b">&#9670;&nbsp;</a></span>goal_temps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double goal_temps[<a class="el" href="main_8c.html#a574730323413d8b893e781b79ca00fec">MAX_TEMP_OBS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a5fababe92c1d899d338fe02fb06198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5fababe92c1d899d338fe02fb06198">&#9670;&nbsp;</a></span>last_temp_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int last_temp_index = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa405860de389666f4592ec170210b23c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa405860de389666f4592ec170210b23c">&#9670;&nbsp;</a></span>temperatures</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double temperatures[<a class="el" href="main_8c.html#a574730323413d8b893e781b79ca00fec">MAX_TEMP_OBS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

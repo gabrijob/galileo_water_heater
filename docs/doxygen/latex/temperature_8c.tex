@@ -1,0 +1,130 @@
+\hypertarget{temperature_8c}{}\doxysection{Referência ao ficheiro C\+:/\+Users/\+João/\+UFRGS/micros/galileo\+\_\+water\+\_\+heater/lib/temperature.c}
+\label{temperature_8c}\index{C:/Users/João/UFRGS/micros/galileo\_water\_heater/lib/temperature.c@{C:/Users/João/UFRGS/micros/galileo\_water\_heater/lib/temperature.c}}
+{\ttfamily \#include $<$byteswap.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$galileoio.\+h$>$}\newline
+{\ttfamily \#include $<$sensors.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{temperature_8c_a7a255a2815b9453060f51c6eb22cfed8}{R2}}~10000.\+0
+\begin{DoxyCompactList}\small\item\em Voltate divider resistance. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{temperature_8c_a111da81ae5883147168bbb8366377b10}{B}}~3460.\+0
+\begin{DoxyCompactList}\small\item\em Thermistor gain. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{temperature_8c_a7426ec7678d2193a93e698bb47607f47}{R\+\_\+\+THERM\+\_\+\+DEFAULT}}~10000.\+0
+\begin{DoxyCompactList}\small\item\em Thermistor resistance at base temperature. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{temperature_8c_ac16509a75e3d3fc46b9df1726be486ec}{T1}}~298.\+15
+\begin{DoxyCompactList}\small\item\em Themistor base temperature ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{temperature_8c_a25ff74ab2170c01fdfb3d695c721a8ef}{init\+\_\+temp\+\_\+sensor}} ()
+\item 
+double \mbox{\hyperlink{temperature_8c_a9e6f0b900e703a72400eb9f0b604db48}{R\+\_\+thermistor}} (double v\+\_\+in)
+\item 
+double \mbox{\hyperlink{temperature_8c_a2dcc023881edab172a6f5d0921cbb76f}{calc\+\_\+temp}} (double v\+\_\+in)
+\item 
+double \mbox{\hyperlink{temperature_8c_a2dafa6f02907228f178dc250d8ca19a5}{temperature}} (int fd\+\_\+temp)
+\item 
+void \mbox{\hyperlink{temperature_8c_a0ccb259878f33ca8e926178a7037fc16}{end\+\_\+temp\+\_\+sensor}} (int fd\+\_\+temp)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{temperature_8c_a80d402d10e8341004c0caf10133b80ab}{scale}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{temperature_8c_a111da81ae5883147168bbb8366377b10}\label{temperature_8c_a111da81ae5883147168bbb8366377b10}} 
+\index{temperature.c@{temperature.c}!B@{B}}
+\index{B@{B}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily \#define B~3460.\+0}
+
+
+
+Thermistor gain. 
+
+\mbox{\Hypertarget{temperature_8c_a7a255a2815b9453060f51c6eb22cfed8}\label{temperature_8c_a7a255a2815b9453060f51c6eb22cfed8}} 
+\index{temperature.c@{temperature.c}!R2@{R2}}
+\index{R2@{R2}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{R2}{R2}}
+{\footnotesize\ttfamily \#define R2~10000.\+0}
+
+
+
+Voltate divider resistance. 
+
+\mbox{\Hypertarget{temperature_8c_a7426ec7678d2193a93e698bb47607f47}\label{temperature_8c_a7426ec7678d2193a93e698bb47607f47}} 
+\index{temperature.c@{temperature.c}!R\_THERM\_DEFAULT@{R\_THERM\_DEFAULT}}
+\index{R\_THERM\_DEFAULT@{R\_THERM\_DEFAULT}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{R\_THERM\_DEFAULT}{R\_THERM\_DEFAULT}}
+{\footnotesize\ttfamily \#define R\+\_\+\+THERM\+\_\+\+DEFAULT~10000.\+0}
+
+
+
+Thermistor resistance at base temperature. 
+
+\mbox{\Hypertarget{temperature_8c_ac16509a75e3d3fc46b9df1726be486ec}\label{temperature_8c_ac16509a75e3d3fc46b9df1726be486ec}} 
+\index{temperature.c@{temperature.c}!T1@{T1}}
+\index{T1@{T1}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{T1}{T1}}
+{\footnotesize\ttfamily \#define T1~298.\+15}
+
+
+
+Themistor base temperature ~\newline
+ 
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{temperature_8c_a2dcc023881edab172a6f5d0921cbb76f}\label{temperature_8c_a2dcc023881edab172a6f5d0921cbb76f}} 
+\index{temperature.c@{temperature.c}!calc\_temp@{calc\_temp}}
+\index{calc\_temp@{calc\_temp}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{calc\_temp()}{calc\_temp()}}
+{\footnotesize\ttfamily double calc\+\_\+temp (\begin{DoxyParamCaption}\item[{double}]{v\+\_\+in }\end{DoxyParamCaption})}
+
+Calculate NTC temperature using its measured tension plus compnent constants \mbox{\Hypertarget{temperature_8c_a0ccb259878f33ca8e926178a7037fc16}\label{temperature_8c_a0ccb259878f33ca8e926178a7037fc16}} 
+\index{temperature.c@{temperature.c}!end\_temp\_sensor@{end\_temp\_sensor}}
+\index{end\_temp\_sensor@{end\_temp\_sensor}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{end\_temp\_sensor()}{end\_temp\_sensor()}}
+{\footnotesize\ttfamily void end\+\_\+temp\+\_\+sensor (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+temp }\end{DoxyParamCaption})}
+
+Closes ad0 file. \mbox{\Hypertarget{temperature_8c_a25ff74ab2170c01fdfb3d695c721a8ef}\label{temperature_8c_a25ff74ab2170c01fdfb3d695c721a8ef}} 
+\index{temperature.c@{temperature.c}!init\_temp\_sensor@{init\_temp\_sensor}}
+\index{init\_temp\_sensor@{init\_temp\_sensor}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{init\_temp\_sensor()}{init\_temp\_sensor()}}
+{\footnotesize\ttfamily int init\+\_\+temp\+\_\+sensor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializer to temperature sensor funcions (ad0 for this project). \begin{DoxyReturn}{Retorna}
+AD0 file handler if successful, -\/1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{temperature_8c_a9e6f0b900e703a72400eb9f0b604db48}\label{temperature_8c_a9e6f0b900e703a72400eb9f0b604db48}} 
+\index{temperature.c@{temperature.c}!R\_thermistor@{R\_thermistor}}
+\index{R\_thermistor@{R\_thermistor}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{R\_thermistor()}{R\_thermistor()}}
+{\footnotesize\ttfamily double R\+\_\+thermistor (\begin{DoxyParamCaption}\item[{double}]{v\+\_\+in }\end{DoxyParamCaption})}
+
+Calculates the NTCs resistance through a voltage divider \mbox{\Hypertarget{temperature_8c_a2dafa6f02907228f178dc250d8ca19a5}\label{temperature_8c_a2dafa6f02907228f178dc250d8ca19a5}} 
+\index{temperature.c@{temperature.c}!temperature@{temperature}}
+\index{temperature@{temperature}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{temperature()}{temperature()}}
+{\footnotesize\ttfamily double temperature (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+temp }\end{DoxyParamCaption})}
+
+Reads raw voltage from AD0 and returns the temperature in Cº 
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{temperature_8c_a80d402d10e8341004c0caf10133b80ab}\label{temperature_8c_a80d402d10e8341004c0caf10133b80ab}} 
+\index{temperature.c@{temperature.c}!scale@{scale}}
+\index{scale@{scale}!temperature.c@{temperature.c}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily double scale}
+

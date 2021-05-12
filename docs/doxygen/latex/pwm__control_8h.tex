@@ -1,0 +1,37 @@
+\hypertarget{pwm__control_8h}{}\doxysection{Referência ao ficheiro C\+:/\+Users/\+João/\+UFRGS/micros/galileo\+\_\+water\+\_\+heater/include/pwm\+\_\+control.h}
+\label{pwm__control_8h}\index{C:/Users/João/UFRGS/micros/galileo\_water\_heater/include/pwm\_control.h@{C:/Users/João/UFRGS/micros/galileo\_water\_heater/include/pwm\_control.h}}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pwm__control_8h_ad71ddc709ebb1bcbe4dc7d52f0b79515}{pwm\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{pwm__control_8h_aa6473b73b7bdb161d37f74ac0c2a2fcb}{pwm\+\_\+tension}} (int fd\+\_\+dc, double avg\+\_\+tension)
+\item 
+void \mbox{\hyperlink{pwm__control_8h_a345aaf1ed1cebec59e29c530db5c2865}{pwm\+\_\+end}} (int fd\+\_\+dc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{pwm__control_8h_a345aaf1ed1cebec59e29c530db5c2865}\label{pwm__control_8h_a345aaf1ed1cebec59e29c530db5c2865}} 
+\index{pwm\_control.h@{pwm\_control.h}!pwm\_end@{pwm\_end}}
+\index{pwm\_end@{pwm\_end}!pwm\_control.h@{pwm\_control.h}}
+\doxysubsubsection{\texorpdfstring{pwm\_end()}{pwm\_end()}}
+{\footnotesize\ttfamily void pwm\+\_\+end (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+dc }\end{DoxyParamCaption})}
+
+Closes duty cycle file and disables pwm3. \mbox{\Hypertarget{pwm__control_8h_ad71ddc709ebb1bcbe4dc7d52f0b79515}\label{pwm__control_8h_ad71ddc709ebb1bcbe4dc7d52f0b79515}} 
+\index{pwm\_control.h@{pwm\_control.h}!pwm\_init@{pwm\_init}}
+\index{pwm\_init@{pwm\_init}!pwm\_control.h@{pwm\_control.h}}
+\doxysubsubsection{\texorpdfstring{pwm\_init()}{pwm\_init()}}
+{\footnotesize\ttfamily int pwm\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializer to pwm funcions (pwm3 for this project). \begin{DoxyReturn}{Retorna}
+Duty cycle file handler if successful, -\/1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pwm__control_8h_aa6473b73b7bdb161d37f74ac0c2a2fcb}\label{pwm__control_8h_aa6473b73b7bdb161d37f74ac0c2a2fcb}} 
+\index{pwm\_control.h@{pwm\_control.h}!pwm\_tension@{pwm\_tension}}
+\index{pwm\_tension@{pwm\_tension}!pwm\_control.h@{pwm\_control.h}}
+\doxysubsubsection{\texorpdfstring{pwm\_tension()}{pwm\_tension()}}
+{\footnotesize\ttfamily void pwm\+\_\+tension (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+dc,  }\item[{double}]{avg\+\_\+tension }\end{DoxyParamCaption})}
+
+Sets the new average tension for pwm3. \begin{DoxyItemize}
+\item Duty cycle file handler \item Desired average tension \end{DoxyItemize}

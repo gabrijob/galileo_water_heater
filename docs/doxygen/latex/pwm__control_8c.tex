@@ -1,0 +1,81 @@
+\hypertarget{pwm__control_8c}{}\doxysection{Referência ao ficheiro C\+:/\+Users/\+João/\+UFRGS/micros/galileo\+\_\+water\+\_\+heater/lib/pwm\+\_\+control.c}
+\label{pwm__control_8c}\index{C:/Users/João/UFRGS/micros/galileo\_water\_heater/lib/pwm\_control.c@{C:/Users/João/UFRGS/micros/galileo\_water\_heater/lib/pwm\_control.c}}
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$galileoio.\+h$>$}\newline
+{\ttfamily \#include $<$pwm\+\_\+control.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pwm__control_8c_acd176defdd6ac4d45734c18af179b9d0}{PWM\+\_\+\+PERIOD\+\_\+\+STR}}~\char`\"{}1000000\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pwm__control_8c_aacaca0988244bd3a888ca5befa89f44b}{PWM\+\_\+\+PERIOD}}~1000000
+\begin{DoxyCompactList}\small\item\em Define the period of PWM to 1MHz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pwm__control_8c_a122557a0293deb12253eb7a4dba4e4f6}{VCC}}~3.\+3
+\begin{DoxyCompactList}\small\item\em Define VCC value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pwm__control_8c_ae3d148f659679557b399c8831089550f}{pwm\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{pwm__control_8c_aa6473b73b7bdb161d37f74ac0c2a2fcb}{pwm\+\_\+tension}} (int fd\+\_\+dc, double avg\+\_\+tension)
+\item 
+void \mbox{\hyperlink{pwm__control_8c_a345aaf1ed1cebec59e29c530db5c2865}{pwm\+\_\+end}} (int fd\+\_\+dc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{pwm__control_8c_aacaca0988244bd3a888ca5befa89f44b}\label{pwm__control_8c_aacaca0988244bd3a888ca5befa89f44b}} 
+\index{pwm\_control.c@{pwm\_control.c}!PWM\_PERIOD@{PWM\_PERIOD}}
+\index{PWM\_PERIOD@{PWM\_PERIOD}!pwm\_control.c@{pwm\_control.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_PERIOD}{PWM\_PERIOD}}
+{\footnotesize\ttfamily \#define PWM\+\_\+\+PERIOD~1000000}
+
+
+
+Define the period of PWM to 1MHz. 
+
+\mbox{\Hypertarget{pwm__control_8c_acd176defdd6ac4d45734c18af179b9d0}\label{pwm__control_8c_acd176defdd6ac4d45734c18af179b9d0}} 
+\index{pwm\_control.c@{pwm\_control.c}!PWM\_PERIOD\_STR@{PWM\_PERIOD\_STR}}
+\index{PWM\_PERIOD\_STR@{PWM\_PERIOD\_STR}!pwm\_control.c@{pwm\_control.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_PERIOD\_STR}{PWM\_PERIOD\_STR}}
+{\footnotesize\ttfamily \#define PWM\+\_\+\+PERIOD\+\_\+\+STR~\char`\"{}1000000\char`\"{}}
+
+\mbox{\Hypertarget{pwm__control_8c_a122557a0293deb12253eb7a4dba4e4f6}\label{pwm__control_8c_a122557a0293deb12253eb7a4dba4e4f6}} 
+\index{pwm\_control.c@{pwm\_control.c}!VCC@{VCC}}
+\index{VCC@{VCC}!pwm\_control.c@{pwm\_control.c}}
+\doxysubsubsection{\texorpdfstring{VCC}{VCC}}
+{\footnotesize\ttfamily \#define VCC~3.\+3}
+
+
+
+Define VCC value. 
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{pwm__control_8c_a345aaf1ed1cebec59e29c530db5c2865}\label{pwm__control_8c_a345aaf1ed1cebec59e29c530db5c2865}} 
+\index{pwm\_control.c@{pwm\_control.c}!pwm\_end@{pwm\_end}}
+\index{pwm\_end@{pwm\_end}!pwm\_control.c@{pwm\_control.c}}
+\doxysubsubsection{\texorpdfstring{pwm\_end()}{pwm\_end()}}
+{\footnotesize\ttfamily void pwm\+\_\+end (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+dc }\end{DoxyParamCaption})}
+
+Closes duty cycle file and disables pwm3. \mbox{\Hypertarget{pwm__control_8c_ae3d148f659679557b399c8831089550f}\label{pwm__control_8c_ae3d148f659679557b399c8831089550f}} 
+\index{pwm\_control.c@{pwm\_control.c}!pwm\_init@{pwm\_init}}
+\index{pwm\_init@{pwm\_init}!pwm\_control.c@{pwm\_control.c}}
+\doxysubsubsection{\texorpdfstring{pwm\_init()}{pwm\_init()}}
+{\footnotesize\ttfamily int pwm\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializer to pwm funcions (pwm3 for this project). \begin{DoxyReturn}{Retorna}
+Duty cycle file handler if successful, -\/1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pwm__control_8c_aa6473b73b7bdb161d37f74ac0c2a2fcb}\label{pwm__control_8c_aa6473b73b7bdb161d37f74ac0c2a2fcb}} 
+\index{pwm\_control.c@{pwm\_control.c}!pwm\_tension@{pwm\_tension}}
+\index{pwm\_tension@{pwm\_tension}!pwm\_control.c@{pwm\_control.c}}
+\doxysubsubsection{\texorpdfstring{pwm\_tension()}{pwm\_tension()}}
+{\footnotesize\ttfamily void pwm\+\_\+tension (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+dc,  }\item[{double}]{avg\+\_\+tension }\end{DoxyParamCaption})}
+
+Sets the new average tension for pwm3. \begin{DoxyItemize}
+\item Duty cycle file handler \item Desired average tension \end{DoxyItemize}

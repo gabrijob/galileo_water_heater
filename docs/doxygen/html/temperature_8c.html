@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ENG10032 - Aquecedor Eletrico: Referência ao ficheiro C:/Users/João/UFRGS/micros/galileo_water_heater/lib/temperature.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ENG10032 - Aquecedor Eletrico
+   </div>
+   <div id="projectbrief">Projeto desenvolvido para a disciplina ENG10032 -  Microcontroladores.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a10f97ddb7c06e7845d945af6b41191.html">galileo_water_heater</a></li><li class="navelem"><a class="el" href="dir_030c07d9f592d54c949289919078b2ed.html">lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro temperature.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;byteswap.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="galileoio_8h_source.html">galileoio.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sensors_8h_source.html">sensors.h</a>&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7a255a2815b9453060f51c6eb22cfed8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a7a255a2815b9453060f51c6eb22cfed8">R2</a>&#160;&#160;&#160;10000.0</td></tr>
+<tr class="memdesc:a7a255a2815b9453060f51c6eb22cfed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voltate divider resistance.  <a href="temperature_8c.html#a7a255a2815b9453060f51c6eb22cfed8">Mais...</a><br /></td></tr>
+<tr class="separator:a7a255a2815b9453060f51c6eb22cfed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111da81ae5883147168bbb8366377b10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a111da81ae5883147168bbb8366377b10">B</a>&#160;&#160;&#160;3460.0</td></tr>
+<tr class="memdesc:a111da81ae5883147168bbb8366377b10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thermistor gain.  <a href="temperature_8c.html#a111da81ae5883147168bbb8366377b10">Mais...</a><br /></td></tr>
+<tr class="separator:a111da81ae5883147168bbb8366377b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7426ec7678d2193a93e698bb47607f47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a7426ec7678d2193a93e698bb47607f47">R_THERM_DEFAULT</a>&#160;&#160;&#160;10000.0</td></tr>
+<tr class="memdesc:a7426ec7678d2193a93e698bb47607f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thermistor resistance at base temperature.  <a href="temperature_8c.html#a7426ec7678d2193a93e698bb47607f47">Mais...</a><br /></td></tr>
+<tr class="separator:a7426ec7678d2193a93e698bb47607f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16509a75e3d3fc46b9df1726be486ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a>&#160;&#160;&#160;298.15</td></tr>
+<tr class="memdesc:ac16509a75e3d3fc46b9df1726be486ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Themistor base temperature <br  />
+  <a href="temperature_8c.html#ac16509a75e3d3fc46b9df1726be486ec">Mais...</a><br /></td></tr>
+<tr class="separator:ac16509a75e3d3fc46b9df1726be486ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a25ff74ab2170c01fdfb3d695c721a8ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a25ff74ab2170c01fdfb3d695c721a8ef">init_temp_sensor</a> ()</td></tr>
+<tr class="separator:a25ff74ab2170c01fdfb3d695c721a8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6f0b900e703a72400eb9f0b604db48"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a9e6f0b900e703a72400eb9f0b604db48">R_thermistor</a> (double v_in)</td></tr>
+<tr class="separator:a9e6f0b900e703a72400eb9f0b604db48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dcc023881edab172a6f5d0921cbb76f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a2dcc023881edab172a6f5d0921cbb76f">calc_temp</a> (double v_in)</td></tr>
+<tr class="separator:a2dcc023881edab172a6f5d0921cbb76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dafa6f02907228f178dc250d8ca19a5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a2dafa6f02907228f178dc250d8ca19a5">temperature</a> (int fd_temp)</td></tr>
+<tr class="separator:a2dafa6f02907228f178dc250d8ca19a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ccb259878f33ca8e926178a7037fc16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a0ccb259878f33ca8e926178a7037fc16">end_temp_sensor</a> (int fd_temp)</td></tr>
+<tr class="separator:a0ccb259878f33ca8e926178a7037fc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a80d402d10e8341004c0caf10133b80ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8c.html#a80d402d10e8341004c0caf10133b80ab">scale</a></td></tr>
+<tr class="separator:a80d402d10e8341004c0caf10133b80ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="a111da81ae5883147168bbb8366377b10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111da81ae5883147168bbb8366377b10">&#9670;&nbsp;</a></span>B</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define B&#160;&#160;&#160;3460.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Thermistor gain. </p>
+
+</div>
+</div>
+<a id="a7a255a2815b9453060f51c6eb22cfed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a255a2815b9453060f51c6eb22cfed8">&#9670;&nbsp;</a></span>R2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define R2&#160;&#160;&#160;10000.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Voltate divider resistance. </p>
+
+</div>
+</div>
+<a id="a7426ec7678d2193a93e698bb47607f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7426ec7678d2193a93e698bb47607f47">&#9670;&nbsp;</a></span>R_THERM_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define R_THERM_DEFAULT&#160;&#160;&#160;10000.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Thermistor resistance at base temperature. </p>
+
+</div>
+</div>
+<a id="ac16509a75e3d3fc46b9df1726be486ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16509a75e3d3fc46b9df1726be486ec">&#9670;&nbsp;</a></span>T1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define T1&#160;&#160;&#160;298.15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Themistor base temperature <br  />
+ </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a2dcc023881edab172a6f5d0921cbb76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dcc023881edab172a6f5d0921cbb76f">&#9670;&nbsp;</a></span>calc_temp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double calc_temp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>v_in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculate NTC temperature using its measured tension plus compnent constants </p>
+
+</div>
+</div>
+<a id="a0ccb259878f33ca8e926178a7037fc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ccb259878f33ca8e926178a7037fc16">&#9670;&nbsp;</a></span>end_temp_sensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void end_temp_sensor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd_temp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Closes ad0 file. </p>
+
+</div>
+</div>
+<a id="a25ff74ab2170c01fdfb3d695c721a8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ff74ab2170c01fdfb3d695c721a8ef">&#9670;&nbsp;</a></span>init_temp_sensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int init_temp_sensor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initializer to temperature sensor funcions (ad0 for this project). </p><dl class="section return"><dt>Retorna</dt><dd>AD0 file handler if successful, -1 otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a9e6f0b900e703a72400eb9f0b604db48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6f0b900e703a72400eb9f0b604db48">&#9670;&nbsp;</a></span>R_thermistor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double R_thermistor </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>v_in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the NTCs resistance through a voltage divider </p>
+
+</div>
+</div>
+<a id="a2dafa6f02907228f178dc250d8ca19a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dafa6f02907228f178dc250d8ca19a5">&#9670;&nbsp;</a></span>temperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double temperature </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd_temp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reads raw voltage from AD0 and returns the temperature in Cº </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="a80d402d10e8341004c0caf10133b80ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d402d10e8341004c0caf10133b80ab">&#9670;&nbsp;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double scale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,81 @@
+\hypertarget{sensors_8h}{}\doxysection{Referência ao ficheiro C\+:/\+Users/\+João/\+UFRGS/micros/galileo\+\_\+water\+\_\+heater/include/sensors.h}
+\label{sensors_8h}\index{C:/Users/João/UFRGS/micros/galileo\_water\_heater/include/sensors.h@{C:/Users/João/UFRGS/micros/galileo\_water\_heater/include/sensors.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a122557a0293deb12253eb7a4dba4e4f6}{VCC}}~3.\+3
+\begin{DoxyCompactList}\small\item\em Define the VCC value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sensors_8h_a0de71afb694ee8c781935229c4716f2a}{water\+\_\+level}} (int water\+\_\+level\+\_\+sensor\+\_\+1\+\_\+fd)
+\item 
+double \mbox{\hyperlink{sensors_8h_a0e521d4f8f2939bda9bfbbbfaacc0701}{temperature}} (int fd)
+\item 
+int \mbox{\hyperlink{sensors_8h_a4cb791aeaac1b455c58cb6f970b99a47}{init\+\_\+temp\+\_\+sensor}} (void)
+\item 
+void \mbox{\hyperlink{sensors_8h_a0ccb259878f33ca8e926178a7037fc16}{end\+\_\+temp\+\_\+sensor}} (int fd\+\_\+temp)
+\item 
+int \mbox{\hyperlink{sensors_8h_ad8f865a2e9ee3e8fc819049ac23e67e7}{init\+\_\+water\+\_\+lvl\+\_\+sensor}} (void)
+\item 
+void \mbox{\hyperlink{sensors_8h_aebdb2d136b99c035075b1d4de66c8a68}{end\+\_\+water\+\_\+lvl\+\_\+sensor}} (int fd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{sensors_8h_a122557a0293deb12253eb7a4dba4e4f6}\label{sensors_8h_a122557a0293deb12253eb7a4dba4e4f6}} 
+\index{sensors.h@{sensors.h}!VCC@{VCC}}
+\index{VCC@{VCC}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{VCC}{VCC}}
+{\footnotesize\ttfamily \#define VCC~3.\+3}
+
+
+
+Define the VCC value. 
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{sensors_8h_a0ccb259878f33ca8e926178a7037fc16}\label{sensors_8h_a0ccb259878f33ca8e926178a7037fc16}} 
+\index{sensors.h@{sensors.h}!end\_temp\_sensor@{end\_temp\_sensor}}
+\index{end\_temp\_sensor@{end\_temp\_sensor}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{end\_temp\_sensor()}{end\_temp\_sensor()}}
+{\footnotesize\ttfamily void end\+\_\+temp\+\_\+sensor (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+temp }\end{DoxyParamCaption})}
+
+Closes ad0 file. \mbox{\Hypertarget{sensors_8h_aebdb2d136b99c035075b1d4de66c8a68}\label{sensors_8h_aebdb2d136b99c035075b1d4de66c8a68}} 
+\index{sensors.h@{sensors.h}!end\_water\_lvl\_sensor@{end\_water\_lvl\_sensor}}
+\index{end\_water\_lvl\_sensor@{end\_water\_lvl\_sensor}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{end\_water\_lvl\_sensor()}{end\_water\_lvl\_sensor()}}
+{\footnotesize\ttfamily void end\+\_\+water\+\_\+lvl\+\_\+sensor (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+Closes I02 file. \mbox{\Hypertarget{sensors_8h_a4cb791aeaac1b455c58cb6f970b99a47}\label{sensors_8h_a4cb791aeaac1b455c58cb6f970b99a47}} 
+\index{sensors.h@{sensors.h}!init\_temp\_sensor@{init\_temp\_sensor}}
+\index{init\_temp\_sensor@{init\_temp\_sensor}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{init\_temp\_sensor()}{init\_temp\_sensor()}}
+{\footnotesize\ttfamily int init\+\_\+temp\+\_\+sensor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializer to temperature sensor funcions (ad0 for this project). \begin{DoxyReturn}{Retorna}
+AD0 file handler if successful, -\/1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sensors_8h_ad8f865a2e9ee3e8fc819049ac23e67e7}\label{sensors_8h_ad8f865a2e9ee3e8fc819049ac23e67e7}} 
+\index{sensors.h@{sensors.h}!init\_water\_lvl\_sensor@{init\_water\_lvl\_sensor}}
+\index{init\_water\_lvl\_sensor@{init\_water\_lvl\_sensor}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{init\_water\_lvl\_sensor()}{init\_water\_lvl\_sensor()}}
+{\footnotesize\ttfamily int init\+\_\+water\+\_\+lvl\+\_\+sensor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializer to water level sensor funcions (ad0 for this project). \begin{DoxyReturn}{Retorna}
+I02 file handler if successful, -\/1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sensors_8h_a0e521d4f8f2939bda9bfbbbfaacc0701}\label{sensors_8h_a0e521d4f8f2939bda9bfbbbfaacc0701}} 
+\index{sensors.h@{sensors.h}!temperature@{temperature}}
+\index{temperature@{temperature}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{temperature()}{temperature()}}
+{\footnotesize\ttfamily double temperature (\begin{DoxyParamCaption}\item[{int}]{fd\+\_\+temp }\end{DoxyParamCaption})}
+
+Reads raw voltage from AD0 and returns the temperature in Cº \mbox{\Hypertarget{sensors_8h_a0de71afb694ee8c781935229c4716f2a}\label{sensors_8h_a0de71afb694ee8c781935229c4716f2a}} 
+\index{sensors.h@{sensors.h}!water\_level@{water\_level}}
+\index{water\_level@{water\_level}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{water\_level()}{water\_level()}}
+{\footnotesize\ttfamily int water\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{water\+\_\+level\+\_\+sensor\+\_\+1\+\_\+fd }\end{DoxyParamCaption})}
+
+Returns if the minimum water level is available. 
